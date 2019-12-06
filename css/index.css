@@ -1,8 +1,18 @@
 @import url("normalize.css");
 
+/*Váriaveis Utilizadas*/
+
+:root {
+  --cor-bg-cinza: #fafafa;
+  --cor-letras-preto: #333;
+  --cor-box-cinza: #c6c6c6;
+  --cor-letra-cinza: #f1f1f1;
+}
+
 /*Declarando a ocupação das linhas*/
 
 body {
+  font-family: arial;
   display: grid;
   grid-template-areas: "header header header"
                        "aside main main"
@@ -32,24 +42,50 @@ body {
 
 .main-header {
   grid-area: header;
-  border: 1px solid blue;
+  background-color: var(--cor-bg-cinza);
 }
 
 .sidebar {
   grid-area: aside;
-  border: 1px solid red;
-  position: fixed;
+  height: 90vh;
   display: block;
-  width: 38%;
-  height: 100vh;
+  position: fixed;
+  width: 30%;
+  max-width: 100%;
+  background-color: var(--cor-bg-cinza);
+  box-shadow: 1px 4px 4px var(--cor-box-cinza);
+  border-bottom-right-radius: 3px;
 }
 
 main {
   grid-area: main;
-  border: 1px solid yellow;
 }
 
 footer {
   grid-area:footer;
-  border: 1px solid orange;
+  height: 4em;
+  background-color: var(--cor-letra-cinza);
 }
+
+/* Edição do side-nav*/
+
+nav.side-nav {
+  display: flex;
+  flex-direction:column;
+}
+
+.side-nav a {
+  text-decoration: none;
+  color: var(--cor-letras-preto);
+  padding: .5em;
+
+}
+
+.side-nav a:hover {
+  background-color: var(--cor-letra-cinza);
+}
+
+.side-nav a:focus-within {
+  background: #c4c4c4;
+}
+
