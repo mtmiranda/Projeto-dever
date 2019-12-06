@@ -1,1 +1,55 @@
 @import url("normalize.css");
+
+/*Declarando a ocupação das linhas*/
+
+body {
+  display: grid;
+  grid-template-areas: "header header header"
+                       "aside main main"
+                       "footer footer footer";
+
+  grid-template-columns: repeat(3, auto);
+  grid-template-rows: auto 100vh auto;
+  -webkit-display: grid;
+  -webkit-grid-template-areas: "header header header"
+                       "aside main main"
+                       "footer footer footer";
+
+  -webkit-grid-template-columns: repeat(3, auto);
+  -webkit-grid-template-rows: auto 100vh auto;
+  -moz-display: grid;
+  -moz-grid-template-areas: "header header header"
+                       "aside main main"
+                       "footer footer footer";
+
+  -moz-grid-template-columns: repeat(3, auto);
+  -moz-grid-template-rows: auto 100vh auto;
+}
+
+
+
+/*Dizendo aos elementos aonde eles devem ficar*/
+
+.main-header {
+  grid-area: header;
+  border: 1px solid blue;
+}
+
+.sidebar {
+  grid-area: aside;
+  border: 1px solid red;
+  position: fixed;
+  display: block;
+  width: 38%;
+  height: 100vh;
+}
+
+main {
+  grid-area: main;
+  border: 1px solid yellow;
+}
+
+footer {
+  grid-area:footer;
+  border: 1px solid orange;
+}
