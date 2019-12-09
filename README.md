@@ -8,7 +8,7 @@ Nada mais e nada menos do que **APRENDER** :boom:. E nada melhor do que ir coloc
 #### E o que será utilizado...
 O básiquinho para sempre está se aprimorando e aprendendo mais, nosso **html5** com uma semântica :bomb:
 ### AND
-irei reunir o melhor do *css3/4*, nosso lindo **flex** e **grid**, mais que amigas *FRIENDS*! 
+será reunido o melhor do *css3/4*, nosso lindo **flex** e **grid**, mais que amigas *FRIENDS*! 
 #### ENTRETANTO
 ###### O **objetivo** desse projeto é testar mais o lado de programação do que o de layout, por isso será uma aplicação que tem bastante funcionalidades.
 - O usuário poderá editar textos, cores.
