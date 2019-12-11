@@ -22,7 +22,7 @@ E pra fazer tudo isso será utilizado muito do nosso amigo, mas só ele mesmo, p
 
 **:gem: Mas, calma aí só isso? Claro que não, mas está sendo decidido ainda, por enquanto temos...**
 - [x] React
-- [x] Go Lang
+- [x] Python ou Node
 - [ ] React Native/Android nativo.
 
 Até o momento só, mas ao decorrer do tempo vai acontecer mais pesquisas, vai ver qual vai se adequar melhor. E nem preciso dizer né?
