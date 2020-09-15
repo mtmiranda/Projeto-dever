@@ -21,9 +21,8 @@ será reunido o melhor do *css3/4*, nosso lindo **flex** e **grid**, mais que am
 E pra fazer tudo isso será utilizado muito do nosso amigo, mas só ele mesmo, puríssimo o **JAVASCRIPT**. 
 
 **:gem: Mas, calma aí só isso? Claro que não, mas está sendo decidido ainda, por enquanto temos...**
-- [x] React
-- [x] Python ou Node
-- [ ] React Native/Android nativo.
+- [x] Node, Typescrit, React
+- [x] Mais a acrescentar..
 
 Até o momento só, mas ao decorrer do tempo vai acontecer mais pesquisas, vai ver qual vai se adequar melhor. E nem preciso dizer né?
 #### Vocês vão ficar sabendo! :squirrel: 
