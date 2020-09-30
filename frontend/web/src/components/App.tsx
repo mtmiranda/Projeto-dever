@@ -1,12 +1,13 @@
-import React from 'react';
+import React from "react";
 
 function App() {
   return (
-      
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-
+    <section>
+      <p>
+        Edit <code>src/App.tsx</code> and save to reload.
+      </p>
+      <h1>Teste de texto</h1>
+    </section>
   );
 }
 
