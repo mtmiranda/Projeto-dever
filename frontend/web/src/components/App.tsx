@@ -1,13 +1,17 @@
-import React from "react";
+import React, { Fragment } from 'react';
+import GlobalStyle from '../styles/globalStyle';
+
+//Importando a nossa rota
+import Routes from '../routes';
+
 
 function App() {
   return (
-    <section>
-      <p>
-        Edit <code>src/App.tsx</code> and save to reload.
-      </p>
-      <h1>Teste de texto</h1>
-    </section>
+    <Fragment>
+    <GlobalStyle />
+    <Routes />
+    </Fragment>
+  
   );
 }
 
