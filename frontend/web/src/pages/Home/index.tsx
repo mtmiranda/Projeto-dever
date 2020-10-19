@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { GridLayout, Header, Menu, Main, Footer } from '../../styles/GridContainer';
+import  Sidebar  from '../../components/sidebar/index';
+import  Hamburguer from '../../components/hamburguer/index';
 
 
 //Importação da rota
@@ -13,7 +15,12 @@ const Home = () => {
         <div className="page-home">
             <GridLayout>
                 <Header>a</Header>
-                <Menu>b</Menu>
+                <Menu>
+                    <Hamburguer/>
+                 
+                    
+    
+                </Menu>
                 <Main>
 
                 <h1>Hellou</h1>
