@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import GlobalStyle from '../styles/globalStyle';
+
 import { FormSection, BouncyDiv } from "../styles/loginStyles";
-import Login from "../pages/Login/index";
 
 //Importando a nossa rota
 import Routes from '../routes';
@@ -9,8 +9,9 @@ import Routes from '../routes';
 
 function App() {
   return (
+   
     <Fragment>
-    <GlobalStyle />
+    <GlobalStyle/>
     <Routes />
     
     {/* <BouncyDiv>
@@ -19,8 +20,8 @@ function App() {
         </BouncyDiv> */}
 
     </Fragment>
-  
+   
   );
-}
+} 
 
 export default App;

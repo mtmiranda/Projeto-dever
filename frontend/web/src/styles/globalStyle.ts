@@ -1,6 +1,25 @@
 /*Global styles of application here*/
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 
+
+
+/*Creating variables for media query*/
+
+const size = {
+  mobileS: '320px',
+  mobileM: '375px',
+  mobileL: '425px',
+  tablet: '768px',
+  laptop: '1024px',
+  laptopL: '1440px',
+  desktop: '2560px'
+}
+
+
+
+
+
+/*Normalize*/
 
 export default createGlobalStyle`
   
@@ -241,3 +260,5 @@ textarea {
 
 
 `;
+
+
