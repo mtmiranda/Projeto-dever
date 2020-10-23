@@ -1,100 +1,95 @@
-import React, { Component } from "react";
-import { Form, FormInput, Button } from "../../styles/loginStyles";
+import React, { Component, useState, useContext, FormEvent, ChangeEvent, ButtonHTMLAttributes } from "react";
+import {
+  Form,
+  FormInput,
+  Button,
+  BouncyDiv,
+  FormSection,
+} from "../../styles/loginStyles";
 
 //Importação da rota
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
+import { valueScaleCorrection } from "framer-motion/types/render/dom/layout/scale-correction";
+import StoreContext from "../../components/Store/Context";
+import { useHistory } from "react-router-dom";
 
 
-class Login extends Component<{}, { matricula: string, password: string, error:string}> {
-    constructor() {
-        super(arguments);
-
-        this.state = {
-          matricula: "",
-          password: "",  
-          error: "",
-        }; 
-    
-        this.handlePassChange = this.handlePassChange.bind(this);
-        this.handleMatricChange = this.handleMatricChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.dismissError = this.dismissError.bind(this);
-      }
-    
-      dismissError() {
-        this.setState({ error: "" });
-      }
-     
-      handleSubmit(evt:any) {
-        evt.preventDefault();
-    
-        if (!this.state.matricula) {
-          return this.setState({ error: "Matrícula obrigatória" });
-        }
-    
-        if (!this.state.password) {
-          return this.setState({ error: "Senha obrigatória" });
-        }
-    
-        return this.setState({ error: "" });
-      }
-    
-      handleMatricChange(evt:any) {
-        this.setState({
-          matricula: evt.target.value,
-        });
-        console.log(evt.target.value);
-      }
-    
-      handlePassChange(evt:any) {
-        this.setState({
-          password: evt.target.value,
-        });
-        console.log(evt.target.value);
-      }
-    
-      render() {
-    
-    return(
-
-        <div className="page-login">
-            <Form onSubmit={this.handleSubmit}>
-            {this.state.error && (
-                <h2 onClick={this.dismissError}>
-                    <button onClick={this.dismissError}>✖</button>
-                    {this.state.error}
-                </h2>
-            )}
-
-            <label>Matricula</label>
-            <FormInput
-                type="text"
-                data-test="username"
-                value={this.state.matricula}
-                onChange={this.handleMatricChange.bind(this)}
-            />
-
-            <label>Senha</label>
-            <FormInput
-                type="password"
-                value={this.state.password}
-                onChange={this.handlePassChange.bind(this)}
-            />
-
-            <Button type="submit">
-                Entrar
-            </Button>
-
-            </Form>
-        
-        <Link to="/Home">
-            Ir para Home
-        </Link>
-
-        </div>
-        
-        ); 
- 
-     }  
+function initialState() {
+  return { matric: "", password: "" };
 }
+
+
+function login(matric: string, password: string ) {
+  if (matric === "admin" && password === "admin") {
+    return { token: "1234" };
+  }
+  return { error: "Usuário ou senha inválido" };
+}
+
+const Login = () => {
+  const [values, setValues] = useState(initialState);
+  const [error, setError] = useState(null);
+  const { setToken } = useContext(StoreContext);
+  const history = useHistory();
+
+  function onChange(event: ChangeEvent<HTMLInputElement>) {
+    const { value, name } = event.target;
+
+    setValues({
+      ...values,
+      [name]: value,
+    });
+  }
+
+  function onSubmit(event: React.ChangeEvent<HTMLFormElement>) {
+    event.preventDefault();
+
+    const { token, error } = login(values.matric, values.password);
+
+    if (token) {
+      setToken();
+      return history.push("/");
+    }
+
+    // setError(error);
+    setValues(initialState);
+  }
+
+  return (
+    <div className="page-login">
+      <BouncyDiv>
+        <FormSection>
+          <Form onSubmit={onSubmit}>
+            <label htmlFor="matric">Matricula</label>
+            <FormInput
+              id="matric"
+              type="text"
+              name="matric"
+              onChange={onChange}
+              value={values.matric}
+            />
+
+            <label htmlFor="password">Senha</label>
+            <FormInput
+              id="password"
+              type="password"
+              onChange={onChange}
+              name="password"
+              value={values.password}
+            />
+
+            <Button type="submit">Entrar</Button>
+
+            {/* {error && (
+          <div className="user-login__error">{error}</div>
+        )} */}
+          </Form>
+        </FormSection>
+      </BouncyDiv>
+
+      <Link to="/Home">Ir para Home</Link>
+    </div>
+  );
+};
+
 export default Login;

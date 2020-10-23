@@ -1,7 +1,5 @@
 import styled, { keyframes, createGlobalStyle } from "styled-components";
 import { bounce } from "react-animations";
-import { FcGraduationCap } from "react-icons/fc";
-
 
 const jump = keyframes`
   from{

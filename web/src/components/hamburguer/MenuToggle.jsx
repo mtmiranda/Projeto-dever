@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 
 
-const Path = (props: any) => (
+const Path = (props) => (
     <motion.path
       fill="transparent"
       strokeWidth="3"
@@ -13,7 +13,7 @@ const Path = (props: any) => (
     />
   );
   
-  export const MenuToggle = (toggle: any ) => (
+  export const MenuToggle = ({ toggle }) => (
     <button className="button" onClick={toggle}>
       <svg width="23" height="23" viewBox="0 0 23 23">
         <Path
