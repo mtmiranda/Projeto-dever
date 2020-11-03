@@ -1,11 +1,10 @@
 import { Request, Response, NextFunction} from 'express';
-import Knex from 'knex';
-//import knex from '../database/connection';
+import knex from '../../database/connection';
 
-/*
 
 class WorkspaceController {
 
+/*
     
     async create(request: Request, response: Response, next: NextFunction) {
         try{
@@ -69,10 +68,150 @@ class WorkspaceController {
             next(error)
         }
     }
+   */
+//Create
+
+async create(request: Request, response: Response, next: NextFunction) { 
+    try {
+
+        const { titulo, FkIdUsuarios } = request.body
+
+        const worksapceItems = {
+            titulo,
+            FkIdUsuarios,
+        }
+        
+       const workspace = await knex('workspace').insert(worksapceItems);
+
+            return response.json(workspace);
+
+            
+
+    } catch (error) {
+        next(error)
+    }
+}
+
+
+
+//Index
+
+async index(request: Request, response: Response, next: NextFunction) { 
+    try {
+        const id = Number(request.params);
+
+        const workspace = knex('workspace');
+ /*
+        if  (query) {
+            query
+            .join('usuarios', 'workspace.FkIdUsuarios', '=', 'usuarios.id')
+            .select('workspace.titulo as Workspace Nome', 'usuarios.nome')
+            .where('usuarios', id);
+
+            const results = await query;
+        
+        return response.json(results);
+                
+        }
+
+        */
+
+       if(workspace){
+        /*
+        workspace
+        .join('usuarios', 'workspace.FkIdUsuarios', '=', 'usuarios.id')
+        .where('usuarios.id', id).first().select('workspace.titulo as Workspace', 'workspace.id', 'usuarios.nome');
+        */
+        const resultado = await workspace;
+
+        return response.json(resultado);
     
+        } 
+
+        
+
+
+
+
+    } catch (error) {
+        next(error)
+    }
+}
+
+//Show
+
+async show(request: Request, response: Response, next: NextFunction) {
+    try {
+
+        const id = Number(request.params.id);
+
+        const workspace  = knex('workspace');
+    
+        if(workspace){
+            
+        workspace
+        .join('usuarios', 'workspace.FkIdUsuarios', '=', 'usuarios.id')
+        .where('workspace.id', id).first().select('workspace.titulo as Workspace', 'workspace.id', 'usuarios.nome');
+        
+        const resultado = await workspace;
+
+        return response.json( resultado );
+    
+        } 
+
+    }  
+    
+    catch (error) {
+        return response.status(400).json({ message: 'Worksapce not Found' });
+    }
+
+    
+   
+    
+   
 
 }
-*/
+
+//Update
+  async update(request: Request, response: Response, next: NextFunction) {
+    try {
+        const { titulo } = request.body
+        const { id } = request.params
+        
+        
+        await knex('workspace')
+        .update({ titulo })
+        .where({ id })
+
+        return response.send()
+
+    } catch (error) {
+        next(error)
+    }
+}
+//Delete
+
+ //delete
+   async delete(request: Request, response: Response, next: NextFunction) {
+    try {
+    const id  = Number(request.params.id);
+
+    const workspace = await knex('workspace').where('id', id).delete();
+    
+    return response.json({ msg: 'successfully deleted' });
+
+    } catch (error) {
+        return response.status(400).json({ message: 'User not found.' });
+        //next(error)
+    
+    }
+}
+
+}
 
 
-export default  WorkspaceController;
+
+
+
+
+export default WorkspaceController;
