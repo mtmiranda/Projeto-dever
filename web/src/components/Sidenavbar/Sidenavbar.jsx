@@ -89,25 +89,25 @@ const Sidenavbar = () => {
               </NavLink>
             </li>
             <li>
-              <NavLink to="all-notes">
+              <NavLink to="/all-notes">
                 <FontAwesomeIcon className="icon" icon={faStickyNote} />
                 Todas Anotações
               </NavLink>
             </li>
             <li>
-              <NavLink to="fav-2">
+              <NavLink to="/fav-2">
                 <FontAwesomeIcon className="icon" icon={faStar} />
                 Favorito
               </NavLink>
             </li>
             <li>
-              <NavLink to="fav-3">
+              <NavLink to="/fav-3">
                 <FontAwesomeIcon className="icon" icon={faStar} />
                 Favorito
               </NavLink>
             </li>
             <li>
-              <NavLink to="trash">
+              <NavLink to="/trash">
                 <FontAwesomeIcon className="icon" icon={faTrash} />
                 Lixeira
               </NavLink>
