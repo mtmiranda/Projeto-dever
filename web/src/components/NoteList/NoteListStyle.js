@@ -44,6 +44,16 @@ const NoteCount = styled.div``;
 const NoteListBody = styled.section`
   flex: 1;
   overflow: auto;
+
+  .empty-state {
+    opacity: 0.3;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: lowercase;
+    font-size: 14px;
+  }
 `;
 
 const NoteCard = styled.section`

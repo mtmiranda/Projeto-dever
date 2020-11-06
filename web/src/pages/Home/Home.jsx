@@ -3,7 +3,6 @@ import StoreContext from "components/Store/Context";
 import { NotesContext } from "../../context/context";
 import NoteReducer from "../../reducer/NoteReducer";
 
-import Hamburguer from "../../components/hamburguer/index";
 import Sidenavbar from "../../components/Sidenavbar";
 import NoteList from "../../components/NoteList";
 import Note from "../../components/Note";
@@ -40,7 +39,6 @@ const PagesHome = () => {
 
             <Menu>
               <Sidenavbar />
-              {/* <Hamburguer /> */}
             </Menu>
 
             <Main>
