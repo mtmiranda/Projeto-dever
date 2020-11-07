@@ -1,16 +1,20 @@
 import express, { Request, Response, NextFunction, ErrorRequestHandler } from "express";
-import workspaceController from "./controllers/WorkspaceController/WorkspaceController";
-
-const routes = express.Router();
-
-/*
-
-//Importando as classes que nós criamos separadamente
+import knex from './database/connection';
 import WorkspaceController from './controllers/WorkspaceController/WorkspaceController';
-import CategoriasController from './controllers/CategoriasController/';
+import CategoriasController from './controllers/CategoriasController/CategoriasController';
 
 //Instanciando as classes 
 const routes = express.Router();
+const  workspaceController = new  WorkspaceController();
+const categoriasController = new CategoriasController();
+
+
+/*
+//Importando as classes que nós criamos separadamente
+
+
+
+
 
 const WorkspaceController = new WorkspaceController();
 const CategoriasController = new CategoriasController();
@@ -30,27 +34,44 @@ routes.get('/points/:id', pointsController.show);
 
 
 
+
+routes.get('/', (req: Request, res: Response) => {
+    return res.json({ Hello: 'Wold'});
+});*/
+
+
+
+
+
+/*
+routes.get('/users', async (req: Request, res: Response) => {
+    const usuarios = await knex('usuarios').select('*');
+
+    return res.json(usuarios);
+
+});
 */
 
 //Create
-routes.post('/', workspaceController.create);
-//routes.post('/', categoriasController.create);
+routes.post('/home', workspaceController.create);
+routes.post('/categoria', categoriasController.create);
 
 //See all Items
-routes.get('/', workspaceController.index);
-//routes.get('/', categoriasController.index);
+routes.get('/workspace', workspaceController.index);
+routes.get('/categoria', categoriasController.index);
 
 //Show only Item
-routes.get('/:id', workspaceController.show);
-//routes.get('/:id', categoriasController.show);
+routes.get('/home/:id', workspaceController.show);
+routes.get('/categoria/:id', categoriasController.show);
+
 
 //Update only item
-routes.put('/:id', workspaceController.update);
-//routes.put('/:id', categoriasController.update);
+routes.put('/home/:id', workspaceController.update);
+routes.put('/categoria/:id', categoriasController.update);
 
 //Delete only item
-routes.delete('/:id', workspaceController.delete);
-//routes.delete('/:id', categoriasController.delete);
+routes.delete('/home/:id', workspaceController.delete);
+routes.delete('/categoria/:id', categoriasController.delete);
 
 
 export default routes;

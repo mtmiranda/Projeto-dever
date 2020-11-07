@@ -29,7 +29,7 @@ function login({ user, password }) {
   if (user === "admin" && password === "admin") {
     return { token: "1234" };
   }
-  return { error: "Usuário ou senha inválido" };
+  return { error: "Matrícula ou Senha inválida" };
 }
 
 const UserLogin = () => {
@@ -71,7 +71,12 @@ const UserLogin = () => {
             <InputBox>
               <IconContext.Provider
                 value={{
-                  style: { position: "absolute", top: "19px", left: "15px", color: "#2e0094" },
+                  style: {
+                    position: "absolute",
+                    top: "19px",
+                    left: "15px",
+                    color: "#2e0094",
+                  },
                 }}
               >
                 <FaUserGraduate size={15} />
@@ -90,7 +95,12 @@ const UserLogin = () => {
             <InputBox>
               <IconContext.Provider
                 value={{
-                  style: { position: "absolute", top: "19px", left: "15px", color: "#2e0094" },
+                  style: {
+                    position: "absolute",
+                    top: "19px",
+                    left: "15px",
+                    color: "#2e0094",
+                  },
                 }}
               >
                 <RiLockPasswordFill size={15} />
