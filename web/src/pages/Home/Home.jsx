@@ -6,7 +6,6 @@ import NoteReducer from "../../reducer/NoteReducer";
 import Sidenavbar from "../../components/Sidenavbar";
 import NoteList from "../../components/NoteList";
 import Note from "../../components/Note";
-
 import "../../assets/App.css";
 
 import {
@@ -32,9 +31,6 @@ const PagesHome = () => {
         <div className="pages-home">
           <GridLayout>
             <Header>
-              <button type="button" onClick={() => setToken(null)}>
-                Sair
-              </button>
             </Header>
 
             <Menu>
@@ -44,7 +40,7 @@ const PagesHome = () => {
             <Main>
               <Switch>
                 <Route path="/all-notes">
-                  <NoteList title="Todas Anotações:" />
+                  <NoteList title="Todas Anotações " />
                   <Route path="/all-notes/:id">
                     <Note />
                   </Route>

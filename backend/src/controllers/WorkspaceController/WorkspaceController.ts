@@ -10,8 +10,8 @@ class WorkspaceController {
         try{
         const {
             titulo,
-            usuario
-        } = request.body;
+            FkIdUsuarios
+        } = req.body;
     
         const trx = await knex.transaction();
         
@@ -43,7 +43,7 @@ class WorkspaceController {
         await trx.commit();
         //Os três pontos significa spred operator, que significa pegar todas as informações  que nós temos no objeto e retornar dentro de outro
     
-        return response.json({ 
+        return res.json({ 
             id: workspace_id,
             ...workspace,
         });
@@ -52,17 +52,21 @@ class WorkspaceController {
     }
 
     } // fim create
+*/
 
-    //delete
+    //update 
 
-    async delete(request: Request, response: Response, next: NextFunction) { 
+    async update(request: Request, response: Response, next: NextFunction) {
         try {
-            const  { id } = req.params;
+            const { titulo } = request.body
+            const { id } = request.params
+            
+            
             await knex('workspace')
+            .update({ titulo })
             .where({ id })
-            .del();
 
-            return response.status(201).send()
+            return response.send()
 
         } catch (error) {
             next(error)
