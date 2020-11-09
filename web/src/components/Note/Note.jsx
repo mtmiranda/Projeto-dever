@@ -150,7 +150,7 @@ const Note = () => {
     <MainNote>
       <NoteHeader>
         <NoteHeaderDate>
-          Editada por ultimo em, {noteFormatDate(updatedAt)}
+          Editada por ultimo em {noteFormatDate(updatedAt)}
         </NoteHeaderDate>
         <NoteHeaderActionBtn>
           {!isArchive ? (

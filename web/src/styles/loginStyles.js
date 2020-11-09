@@ -1,15 +1,38 @@
 import styled, { keyframes } from "styled-components";
 import { bounce } from "react-animations";
 import img from "../assets/card-forms-img.png";
+import { GiCastle } from "react-icons/gi";
+
+//ANIMATION
+const bounceAnimation = keyframes`${bounce}`;
 
 const Container = styled.section`
   width: 100vw;
-  height: 100vh;
+  height: 90vh;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   background: #f7f7f7;
+`;
+
+const TitlePrincipal = styled.div`
+  font-family: "Oswald", sans-serif;
+  font-size: 4.2em;
+  text-transform: uppercase;
+  font-weight: bold;
+  width: 100%;
+  background: #f7f7f7;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 10px;
+  color: #2e0094;
+`;
+
+const SiglaUniversity = styled(GiCastle)`
+  color: #2e0094;
+  font-size: 2.5em;
+  margin: -10px 0;
 `;
 
 //ESTILOS DO FORM
@@ -24,6 +47,7 @@ const FormSection = styled.section`
   box-shadow: rgba(0, 0, 0, 0.08) 0px 0.5rem 2rem;
   z-index: 999;
   left: 40px;
+  animation: 3.5s ${bounceAnimation};
 
   @media (max-width: 800px) {
     background: #000;
@@ -117,14 +141,25 @@ const CardSection = styled.section`
   background-position-x: 100px;
 `;
 
-//ANIMATION
-const bounceAnimation = keyframes`${bounce}`;
-const BouncyDiv = styled.div`
-  animation: 2s ${bounceAnimation};
+const CardText = styled.div`
+  font-family: inherit;
+  position: relative;
+  top: 35%;
+  left: 23%;
+  color: #fff;
+  font-weight: bold;
+  font-size: 2.2em;
+  width: 80%;
+
+  h2 {
+    margin: 10px;
+  }
 `;
 
 export {
   Container,
+  SiglaUniversity,
+  TitlePrincipal,
   FormSection,
   Form,
   TitleForm,
@@ -133,5 +168,5 @@ export {
   Button,
   Error,
   CardSection,
-  BouncyDiv,
+  CardText,
 };
