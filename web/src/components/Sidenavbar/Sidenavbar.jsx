@@ -4,25 +4,22 @@ import StoreContext from "../Store/Context";
 
 //import dropdown from "dropdown.js";
 
+//IMPORTS ICONS
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faAngleDown,
   faInfo,
   faPlus,
-  faSearch,
-  faStar,
-  faStickyNote,
-  faTrash,
+  faHome,
 } from "@fortawesome/free-solid-svg-icons";
 
+//IMPORTS STYLED COMPONENTS
 import {
   SideNavBar,
   SideNavBarTop,
   SideNavBarTopProfile,
   ProfileIcon,
   ProfileTitle,
-  SideNavBarTopSearch,
-  SearchBlock,
   SideNavBarTopCreateNote,
   NoteTitle,
   NoteButton,
@@ -32,6 +29,9 @@ import {
   FilePlus,
   FileTrash,
   FileStar,
+  FileHome,
+  UniversityDescription,
+  SiglaUniversity,
 } from "./SidenavbarStyle";
 
 //ROTAS
@@ -63,19 +63,17 @@ const Sidenavbar = () => {
         note: response,
       });
     }
-
   };
 
   function handleClickDrop(e) {
     e.preventDefault();
-    var box =  document.querySelector(".dropdown-menu");
-  if (box.style.display === "none") {
-    box.style.display = "block";
-  } else {
-    box.style.display = "none";
+    var box = document.querySelector(".dropdown-menu");
+    if (box.style.display === "none") {
+      box.style.display = "block";
+    } else {
+      box.style.display = "none";
+    }
   }
-  }
- 
 
   return (
     <SideNavBar>
@@ -83,53 +81,55 @@ const Sidenavbar = () => {
         <SideNavBarTopProfile>
           <ProfileIcon>M</ProfileIcon>
           <ProfileTitle>
-            Matheus Moreira            
+            Matheus Moreira
             <div className="dropdown-container" onClick={handleClickDrop}>
               <div className="dropdown-toggle click-dropdown">
-              <FontAwesomeIcon className="icon" icon={faAngleDown} />
-              
-              <div className="dropdown-menu">
-              <button type="button">
-                Perfil
-              </button>
-              <button type="button" onClick={() => setToken(null)}>
-                Sair
-              </button>
+                <FontAwesomeIcon className="icon" icon={faAngleDown} />
+
+                <div className="dropdown-menu">
+                  <button type="button">Perfil</button>
+                  <button type="button" onClick={() => setToken(null)}>
+                    Sair
+                  </button>
+                </div>
               </div>
-              </div>
-            </div>      
+            </div>
           </ProfileTitle>
         </SideNavBarTopProfile>
-        <SideNavBarTopSearch>
-          <SearchBlock>
-            <FontAwesomeIcon className="icon" icon={faSearch} />
-            <input placeholder="Procure uma nota"></input>
-          </SearchBlock>
-        </SideNavBarTopSearch>
+
+        <UniversityDescription>
+          <p>
+            Universidade <br />
+            CastleStone (UCS)
+            <SiglaUniversity />
+          </p>
+        </UniversityDescription>
+
         <SideNavBarTopCreateNote>
           <NoteButton onClick={handleCreateNote}>
-          <FontAwesomeIcon className="icon" icon={faPlus} /> 
-            
+            <FontAwesomeIcon className="icon" icon={faPlus} />
+
             <NoteTitle>Nova Nota</NoteTitle>
           </NoteButton>
         </SideNavBarTopCreateNote>
         <SideNavBarTopMenuItem>
           <ul>
             <li>
-              <NavLink to="/fav-1">
-                <FontAwesomeIcon className="icon" icon={faStar} />
-                Favorito
+              <NavLink to="/">
+                <FileHome />
+                {/* <FontAwesomeIcon className="icon" icon={faHome} /> */}
+                Homepage
               </NavLink>
             </li>
             <li>
               <NavLink to="/all-notes">
-               { /*} <FontAwesomeIcon className="icon" icon={faStickyNote} />*/}
-               <FilePlus />
+                {/*} <FontAwesomeIcon className="icon" icon={faStickyNote} />*/}
+                <FilePlus />
                 Todas Anotações
               </NavLink>
             </li>
             <li>
-              <NavLink to="/fav-2">
+              <NavLink to="/fav">
                 <FileStar />
                 Favorito
               </NavLink>
@@ -153,6 +153,5 @@ const Sidenavbar = () => {
     </SideNavBar>
   );
 };
-
 
 export default Sidenavbar;

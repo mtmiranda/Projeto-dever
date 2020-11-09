@@ -3,9 +3,11 @@ import StoreContext from "components/Store/Context";
 import { NotesContext } from "../../context/context";
 import NoteReducer from "../../reducer/NoteReducer";
 
+import Homepage from "../../components/Homepage";
 import Sidenavbar from "../../components/Sidenavbar";
 import NoteList from "../../components/NoteList";
 import Note from "../../components/Note";
+
 import "../../assets/App.css";
 
 import {
@@ -30,8 +32,7 @@ const PagesHome = () => {
       <NotesContext.Provider value={{ notesState: notes, notesDispatch }}>
         <div className="pages-home">
           <GridLayout>
-            <Header>
-            </Header>
+            <Header></Header>
 
             <Menu>
               <Sidenavbar />
@@ -39,12 +40,14 @@ const PagesHome = () => {
 
             <Main>
               <Switch>
+                <Route exact path="/" component={Homepage}></Route>
                 <Route path="/all-notes">
                   <NoteList title="Todas Anotações " />
                   <Route path="/all-notes/:id">
                     <Note />
                   </Route>
                 </Route>
+
                 <Route path="/trash">
                   <NoteList title="Lixeira" />
                   <Route path="/trash/:id">

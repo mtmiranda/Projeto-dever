@@ -11,7 +11,7 @@ exports.createNewNote = async (req, res) => {
   try {
     let currentTime = getTime();
     let newNote = {
-      title: "Untitled",
+      title: "Sem Título",
       desc: "",
       archive: 0,
       createdAt: currentTime,

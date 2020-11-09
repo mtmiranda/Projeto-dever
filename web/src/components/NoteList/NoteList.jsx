@@ -9,8 +9,7 @@ import { getRequest } from "../../utils/apiRequests";
 import { NotesContext } from "../../context/context";
 import { listFormatDate } from "../../utils/helpers";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch }  from "@fortawesome/free-solid-svg-icons";
-
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 import {
   MainNoteList,
@@ -71,7 +70,7 @@ const NoteList = (props) => {
     <MainNoteList>
       <NoteListHeader>
         <NoteListHeaderTitle>
-        <SearchBlock>
+          <SearchBlock>
             <FontAwesomeIcon className="icon" icon={faSearch} />
             <input placeholder="Procure uma nota"></input>
           </SearchBlock>
@@ -94,11 +93,12 @@ const NoteList = (props) => {
             >
               <NoteCard>
                 <NoteCardHead>
-                <NoteCardTitle><StyledIcon /> {note.title}</NoteCardTitle>
-                <NoteCardDate>{listFormatDate(note.updatedAt)}</NoteCardDate>
+                  <NoteCardTitle>
+                    <StyledIcon /> {note.title}
+                  </NoteCardTitle>
+                  <NoteCardDate>{listFormatDate(note.updatedAt)}</NoteCardDate>
                 </NoteCardHead>
                 <NoteCardDesc>{note.desc}</NoteCardDesc>
-                
               </NoteCard>
             </NavLink>
           ))

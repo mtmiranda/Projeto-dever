@@ -1,19 +1,18 @@
 import styled from "styled-components";
-import { FiFileText } from "react-icons/fi"
-
+import { FiFileText } from "react-icons/fi";
 
 /*Icons settings*/
 
 const StyledIcon = styled(FiFileText)`
-color: #fff;
-font-size: 17px;
-font-weight: bolder;
-background: linear-gradient(90deg,#a900ff 0%,#3d00c6 100%);
-padding: 8px;
-border-radius: 20px;
-box-shadow: rgba(0, 0, 0, 0.05) 0px 0.2rem 0.2rem;
-margin-right: 10px;
-`
+  color: #fff;
+  font-size: 17px;
+  font-weight: bolder;
+  background: linear-gradient(90deg, #a900ff 0%, #3d00c6 100%);
+  padding: 8px;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0.2rem 0.2rem;
+  margin-right: 10px;
+`;
 
 const MainNoteList = styled.section`
   height: 100%;
@@ -25,11 +24,12 @@ const MainNoteList = styled.section`
   display: flex;
   flex-direction: column;
 
-  a:hover, a:active {
-   color: #333
+  a:hover,
+  a:active {
+    color: #333;
   }
 
-  a.active section{
+  a.active section {
     background: #afaaff;
     color: #333;
   }
@@ -37,7 +37,6 @@ const MainNoteList = styled.section`
   a.active section:hover {
     box-shadow: rgba(0, 0, 0, 0.05) 0px 0.2rem 0.2rem;
   }
- 
 `;
 
 const SearchBlock = styled.div`
@@ -46,7 +45,6 @@ const SearchBlock = styled.div`
   background: #f1f1f1;
   padding: 6px 10px;
   border-radius: 5px;
-  
 
   .icon {
     font-size: 16px;
@@ -62,7 +60,6 @@ const SearchBlock = styled.div`
   }
 `;
 
-
 const NoteListHeader = styled.section`
   padding: 5px 10px;
   display: flex;
@@ -76,7 +73,6 @@ const NoteListHeader = styled.section`
 const NoteListHeaderTitle = styled.div`
   width: 100%;
   flex: 1;
-
 `;
 
 const NoteListHeaderSubHead = styled.div`
@@ -85,26 +81,25 @@ const NoteListHeaderSubHead = styled.div`
   font-size: 14px;
   display: flex;
   align-items: center;
-  
+
   h1 {
     font-size: 17px;
-    font-family: "Oswald",sans-serif;
+    font-family: "Oswald", sans-serif;
     color: #2e0094;
     text-transform: uppercase;
     font-weight: bold;
     margin-right: 6px;
   }
-
 `;
 
 const NoteCount = styled.div`
-background: linear-gradient(90deg,#00e3d3 0%,#3d00c6 100%);
-    border-radius: 3px;
-    color: white;
-    padding: 4px;
-    font-size: 12px;
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 0.2rem 0.2rem;
-    margin-top: 2px;
+  background: linear-gradient(90deg, #00e3d3 0%, #3d00c6 100%);
+  border-radius: 3px;
+  color: white;
+  padding: 4px;
+  font-size: 12px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0.2rem 0.2rem;
+  margin-top: 2px;
 `;
 
 const NoteListBody = styled.section`
@@ -112,29 +107,27 @@ const NoteListBody = styled.section`
   overflow: auto;
   padding: 10px;
 
-   
   &::-webkit-scrollbar {
     width: 6px;
-}
+  }
 
-/* Track */
-&::-webkit-scrollbar-track {
-    -webkit-box-shadow:  rgba(0, 0, 0, 0.05) 0px 0.2rem 0.2rem; 
+  /* Track */
+  &::-webkit-scrollbar-track {
+    -webkit-box-shadow: rgba(0, 0, 0, 0.05) 0px 0.2rem 0.2rem;
     -webkit-border-radius: 10px;
     border-radius: 10px;
-}
- 
-/* Handle */
-&::-webkit-scrollbar-thumb {
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
     -webkit-border-radius: 10px;
     border-radius: 10px;
-    background: #e1e1e1; 
-    -webkit-box-shadow:  rgba(0, 0, 0, 0.05) 0px 0.2rem 0.2rem; 
-}
-&::-webkit-scrollbar-thumb:window-inactive {
-	background: #e1e1e1; 
-}
-
+    background: #e1e1e1;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.05) 0px 0.2rem 0.2rem;
+  }
+  &::-webkit-scrollbar-thumb:window-inactive {
+    background: #e1e1e1;
+  }
 
   .empty-state {
     opacity: 0.3;
@@ -153,22 +146,20 @@ const NoteCard = styled.section`
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  box-shadow: rgba(0,0,0,0.05) 0px 0.2rem 0.2rem;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0.2rem 0.2rem;
   text-decoration: none;
-  margin-bottom:10px;
+  margin-bottom: 10px;
   background: #fff;
   border-radius: 6px;
   padding: 10px;
   transition: 1s;
-    
+
   &:hover {
-    box-shadow: inset -2px -2px 6px rgba(255, 255, 255, .7), 
-                        inset -2px -2px 4px rgba(255, 255, 255, .5),
-                        inset 2px 2px 2px rgba(255, 255, 255, .075), 
-                        inset 2px 2px 4px rgba(0, 0, 0, .15); 
+    box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.7),
+      inset -2px -2px 4px rgba(255, 255, 255, 0.5),
+      inset 2px 2px 2px rgba(255, 255, 255, 0.075),
+      inset 2px 2px 4px rgba(0, 0, 0, 0.15);
   }
-
-
 `;
 
 const NoteCardHead = styled.div`
@@ -176,7 +167,6 @@ const NoteCardHead = styled.div`
   display: flex;
   flex-direction: column;
   font-size: 14px;
-
 `;
 
 const NoteCardTitle = styled.div`
@@ -187,32 +177,31 @@ const NoteCardTitle = styled.div`
   overflow: hidden;
   text-overflow: ellipsis;
   display: flex;
-  align-items:center;
+  align-items: center;
   text-decoration: none;
   font-size: 12px;
   text-transform: uppercase;
-  letter-spacing: .5px;
-  font-family: 'Roboto', sans-serif;
+  letter-spacing: 0.5px;
+  font-family: "Roboto", sans-serif;
   padding: 4px;
 `;
 
 const NoteCardDesc = styled.div`
-  width: 100%;
+  width: auto;
   color: #737373;
   margin-top: 5px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   font-size: 12px;
-    margin-top: 7px;
-    margin-left: 7px;
+  margin-top: 7px;
+  margin-left: 48px;
 `;
 
 const NoteCardDate = styled.div`
   font-size: 10px;
   margin-left: 48px;
   margin-top: -5px;
-
 `;
 
 export {
