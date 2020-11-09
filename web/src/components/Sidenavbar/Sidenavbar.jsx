@@ -1,5 +1,8 @@
 import React, { useState, useContext } from "react";
 import { NotesContext } from "context/context";
+import StoreContext from "../Store/Context";
+
+//import dropdown from "dropdown.js";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -26,6 +29,9 @@ import {
   SideNavBarTopMenuItem,
   SideNavBarBottom,
   SideNavBarBottomNeedHelp,
+  FilePlus,
+  FileTrash,
+  FileStar,
 } from "./SidenavbarStyle";
 
 //ROTAS
@@ -37,6 +43,7 @@ const Sidenavbar = () => {
   const notesContext = useContext(NotesContext);
   const history = useHistory();
   const [error, setError] = useState(null);
+  const { setToken } = useContext(StoreContext);
 
   const handleCreateNote = async () => {
     const response = await postRequest(`${BASE_URL}${CREATE_NOTE}`);
@@ -56,7 +63,19 @@ const Sidenavbar = () => {
         note: response,
       });
     }
+
   };
+
+  function handleClickDrop(e) {
+    e.preventDefault();
+    var box =  document.querySelector(".dropdown-menu");
+  if (box.style.display === "none") {
+    box.style.display = "block";
+  } else {
+    box.style.display = "none";
+  }
+  }
+ 
 
   return (
     <SideNavBar>
@@ -64,8 +83,21 @@ const Sidenavbar = () => {
         <SideNavBarTopProfile>
           <ProfileIcon>M</ProfileIcon>
           <ProfileTitle>
-            Matheus Moreira
-            <FontAwesomeIcon className="icon" icon={faAngleDown} />
+            Matheus Moreira            
+            <div className="dropdown-container" onClick={handleClickDrop}>
+              <div className="dropdown-toggle click-dropdown">
+              <FontAwesomeIcon className="icon" icon={faAngleDown} />
+              
+              <div className="dropdown-menu">
+              <button type="button">
+                Perfil
+              </button>
+              <button type="button" onClick={() => setToken(null)}>
+                Sair
+              </button>
+              </div>
+              </div>
+            </div>      
           </ProfileTitle>
         </SideNavBarTopProfile>
         <SideNavBarTopSearch>
@@ -76,7 +108,8 @@ const Sidenavbar = () => {
         </SideNavBarTopSearch>
         <SideNavBarTopCreateNote>
           <NoteButton onClick={handleCreateNote}>
-            <FontAwesomeIcon className="icon" icon={faPlus} />
+          <FontAwesomeIcon className="icon" icon={faPlus} /> 
+            
             <NoteTitle>Nova Nota</NoteTitle>
           </NoteButton>
         </SideNavBarTopCreateNote>
@@ -90,25 +123,21 @@ const Sidenavbar = () => {
             </li>
             <li>
               <NavLink to="/all-notes">
-                <FontAwesomeIcon className="icon" icon={faStickyNote} />
+               { /*} <FontAwesomeIcon className="icon" icon={faStickyNote} />*/}
+               <FilePlus />
                 Todas Anotações
               </NavLink>
             </li>
             <li>
               <NavLink to="/fav-2">
-                <FontAwesomeIcon className="icon" icon={faStar} />
-                Favorito
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/fav-3">
-                <FontAwesomeIcon className="icon" icon={faStar} />
+                <FileStar />
                 Favorito
               </NavLink>
             </li>
             <li>
               <NavLink to="/trash">
-                <FontAwesomeIcon className="icon" icon={faTrash} />
+                {/*<FontAwesomeIcon className="icon" icon={faTrash} />*/}
+                <FileTrash />
                 Lixeira
               </NavLink>
             </li>
@@ -124,5 +153,6 @@ const Sidenavbar = () => {
     </SideNavBar>
   );
 };
+
 
 export default Sidenavbar;

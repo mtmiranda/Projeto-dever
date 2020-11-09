@@ -5,17 +5,23 @@ const MainNote = styled.section`
   flex: 1;
   flex-direction: column;
   height: 100%;
+  padding: 10px;
+  
 `;
 
 const NoteHeader = styled.section`
-  height: 100px;
+  height: 60px;
   width: 100%;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
   padding: 20px;
   box-sizing: border-box;
-  border-bottom: 1px solid #e6e6e6;
+  background: #fff;
+  margin-bottom: 15px;
+  box-shadow: rgba(0,0,0,0.05) 0px 0.2rem 0.2rem;
+    border-radius: 6px;
+    
 `;
 
 const NoteHeaderDate = styled.div`
@@ -42,26 +48,45 @@ const ActionBtn = styled.div`
 const NoteBody = styled.section`
   flex: 1;
   padding: 20px;
+  background: #fff;
+  box-shadow: rgba(0,0,0,0.05) 0px 0.2rem 0.2rem;
+    border-radius: 6px;
+    border: .5px solid rgba(0, 0, 0, .05);
 `;
 
 const NoteBodyHead = styled.div`
   input {
     padding: 10px;
-    font-size: 30px;
     border: none;
     outline: none;
-    width: 100%;
+    width: 98%;
+    background: #fafafa;
+    border-radius: 6px;
+    opacity: .8;
+    margin-bottom: .6em;
+    font-size: 22px;
+    font-family: "Oswald",sans-serif;
+    color: #2e0094;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: .8px;
+    padding: 10px;
   }
 `;
 
 const NoteBodyContent = styled.div`
   textarea {
-    width: 100%;
-    height: 100px;
+    width: 98%;
+    height: 32rem;
     padding: 10px;
     font-size: 16px;
     border: none;
     outline: none;
+    background: #fafafa;
+    border-radius: 6px;
+    opacity: .8;
+    color:#000;
+    
   }
 `;
 

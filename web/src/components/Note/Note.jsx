@@ -185,6 +185,7 @@ const Note = () => {
           <textarea
             value={desc}
             placeholder="Digite uma nota aqui..."
+            spellCheck="false"
             onChange={handleDescChange}
             onBlur={() => handleUpdateNote("desc")}
           ></textarea>
