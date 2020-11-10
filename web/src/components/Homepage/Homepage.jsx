@@ -1,13 +1,15 @@
 import React from "react";
 
-import { ContainerWelcome, WelcomeBox } from "./HomepageStyle";
+import { ContainerWelcome, Overlay, WelcomeBox } from "./HomepageStyle";
 
 const Homepage = () => {
   return (
-    <ContainerWelcome>
+    <ContainerWelcome className="radial-gradient">
+      <Overlay />
       <WelcomeBox>
         <h1>
-          Seja Bem vindo(a) ao sistema de anotações da Universidade CastleStone:
+          Seja Bem vindo(a) ao sistema de anotações da Universidade Castle
+          Stone:
         </h1>
         <h2>
           Aqui voce poderá armazenar suas anotações e consultá-las durante seu
