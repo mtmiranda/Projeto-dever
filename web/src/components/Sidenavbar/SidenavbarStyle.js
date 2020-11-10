@@ -49,7 +49,7 @@ const SideNavBarTop = styled.section`
 
 const SideNavBarTopProfile = styled.div`
   display: flex;
-  align-itens: center;
+  align-items: center;
   justify-content: center;
   padding: 15px;
 `;
@@ -130,7 +130,7 @@ const SideNavBarTopSearch = styled.div`
 
 const SearchBlock = styled.div`
   display: flex;
-  align-itens: center;
+  align-items: center;
   background: #f1f1f1;
   padding: 6px 10px;
   border-radius: 50px;
@@ -185,6 +185,13 @@ const SideNavBarTopMenuItem = styled.div`
         padding: 10px 18px;
         color: #333;
         text-decoration: none;
+        background: #dddd;
+    width: 56px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 14px;
+    padding: 24px 16px;
+    border-radius: 5px;
 
         .icon {
           font-size: 14px;
