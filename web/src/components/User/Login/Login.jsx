@@ -10,7 +10,7 @@ import { RiLockPasswordFill } from "react-icons/ri";
 import {
   Container,
   TitlePrincipal,
-  SiglaUniversity,
+  IconUniversity,
   Form,
   FormInput,
   Button,
@@ -67,9 +67,6 @@ const UserLogin = () => {
 
   return (
     <>
-      <TitlePrincipal>
-        <SiglaUniversity /> Universidade Castle Stone <SiglaUniversity />
-      </TitlePrincipal>
       <Container>
         <FormSection>
           <Form onSubmit={onSubmit}>
@@ -128,7 +125,9 @@ const UserLogin = () => {
           </Form>
         </FormSection>
         <CardSection>
+          <IconUniversity />
           <CardText>
+            <TitlePrincipal>Universidade Castle Stone</TitlePrincipal>
             <h2>Olá, Aluno!</h2>
             <h2>
               Insira as credenciais de acesso para começar a visualizar suas

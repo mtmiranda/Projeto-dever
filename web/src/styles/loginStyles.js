@@ -1,38 +1,49 @@
 import styled, { keyframes } from "styled-components";
 import { bounce } from "react-animations";
-import img from "../assets/card-forms-img.png";
 import { GiCastle } from "react-icons/gi";
 
 //ANIMATION
 const bounceAnimation = keyframes`${bounce}`;
 
 const Container = styled.section`
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
   width: 100vw;
-  height: 90vh;
+  height: 100vh;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background: #f7f7f7;
+  background: linear-gradient(-45deg, #23a6d5, #d3d3d3, #23a6d5, #00ffed);
+  animation: gradient 15s ease infinite;
+  background-size: 400% 400%;
 `;
 
-const TitlePrincipal = styled.div`
+const TitlePrincipal = styled.h1`
   font-family: "Oswald", sans-serif;
-  font-size: 4.2em;
+  font-size: 2.2em;
   text-transform: uppercase;
   font-weight: bold;
-  width: 100%;
-  background: #f7f7f7;
-  margin: 0 auto;
-  text-align: center;
-  padding-top: 10px;
   color: #2e0094;
+  margin: 33px 10px;
 `;
 
-const SiglaUniversity = styled(GiCastle)`
+const IconUniversity = styled(GiCastle)`
   color: #2e0094;
-  font-size: 2.5em;
-  margin: -10px 0;
+  font-size: 7.5em;
+  position: relative;
+  left: 222px;
+  top: 80px;
 `;
 
 //ESTILOS DO FORM
@@ -132,7 +143,6 @@ const CardSection = styled.section`
   width: 481px;
   height: 610px;
   border-radius: 0.5rem;
-  background: url("${img}") no-repeat;
   left: -60px;
   box-shadow: rgba(0, 0, 0, 0.08) 0px 0.2rem 0.2rem;
   background-position-y: 160px;
@@ -144,21 +154,22 @@ const CardSection = styled.section`
 const CardText = styled.div`
   font-family: inherit;
   position: relative;
-  top: 35%;
-  left: 23%;
-  color: #fff;
-  font-weight: bold;
-  font-size: 2.2em;
+  top: 11%;
+  left: 21%;
   width: 80%;
 
   h2 {
     margin: 10px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.5em;
+    font-family: inherit;
   }
 `;
 
 export {
   Container,
-  SiglaUniversity,
+  IconUniversity,
   TitlePrincipal,
   FormSection,
   Form,

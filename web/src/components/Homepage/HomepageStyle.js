@@ -13,19 +13,35 @@ const ContainerWelcome = styled.section`
   background-image: url(${img});
   background-size: cover;
   animation: 1.5s ${containerAnimation};
+  position: relative;
+`;
+
+const Overlay = styled.div`
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+  background: linear-gradient(90deg, #00e3d3 0%, #3d00c6 100%);
+  opacity: 0.2;
 `;
 
 const WelcomeBox = styled.div`
-  width: 50%;
+  position: absolute;
+  width: 37%;
   height: auto;
   background: white;
   padding: 50px;
   margin: 50px auto;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.04) 0px 0.5rem 1.5rem;
-  position: relative;
   top: 30%;
-  animation: 2s ${welcomeBoxAnimation};
+  left: 27%;
+  animation: 3s ${welcomeBoxAnimation};
 
   h1,
   h2 {
@@ -34,13 +50,14 @@ const WelcomeBox = styled.div`
 
   h1 {
     font-weight: bold;
-    font-size: 2.8em;
+    font-size: 2em;
   }
 
   h2 {
     margin-top: 20px;
     font-size: 1.5em;
+    font-family: inherit;
   }
 `;
 
-export { ContainerWelcome, WelcomeBox };
+export { ContainerWelcome, Overlay, WelcomeBox };
