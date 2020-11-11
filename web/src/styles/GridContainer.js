@@ -9,7 +9,7 @@ export const GridLayout = styled.div`
     "aside main main"
     "footer footer footer";
   /*Column, primeira coluna altera o valor do aside*/
-  grid-template-columns: 250px repeat(2, auto);
+  grid-template-columns: 200px repeat(2, auto);
   grid-template-rows: auto 100vh auto;
   -webkit-display: grid;
   -webkit-grid-template-areas: "aside header header" "aside main main"

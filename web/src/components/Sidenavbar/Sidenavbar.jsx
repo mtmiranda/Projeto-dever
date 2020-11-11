@@ -21,11 +21,7 @@ import {
   ProfileIcon,
   ProfileTitle,
   SideNavBarTopCreateNote,
-  NoteTitle,
-  NoteButton,
   SideNavBarTopMenuItem,
-  SideNavBarBottom,
-  SideNavBarBottomNeedHelp,
   FilePlus,
   FileTrash,
   FileStar,
@@ -74,6 +70,18 @@ const Sidenavbar = () => {
       box.style.display = "none";
     }
   }
+  /*
+  window.onload = function() {
+    var ul = document.querySelector(".ulSide");
+    var li = document.querySelector(".liSide");
+
+    if(document.body.classList.contains('.liSide')) {
+      document.querySelector(".liSide .active").remove();
+    }
+    
+
+  };*/
+  
 
   return (
     <SideNavBar>
@@ -106,17 +114,11 @@ const Sidenavbar = () => {
         </UniversityDescription>
 
         <SideNavBarTopCreateNote>
-          {/* <NoteButton onClick={handleCreateNote}>
-            <FontAwesomeIcon className="icon" icon={faPlus} />
-
-            <NoteTitle>Nova Nota</NoteTitle>
-  </NoteButton> */}
-        <NewNote />
         </SideNavBarTopCreateNote>
         <SideNavBarTopMenuItem>
-          <ul>
+          <ul className="ulSide">
             <li>
-              <NavLink to="/">
+              <NavLink to="/" className="liSide">
                 <FileHome />
                 {/* <FontAwesomeIcon className="icon" icon={faHome} /> */}
                 Homepage
@@ -145,12 +147,6 @@ const Sidenavbar = () => {
           </ul>
         </SideNavBarTopMenuItem>
       </SideNavBarTop>
-      <SideNavBarBottom>
-        <SideNavBarBottomNeedHelp>
-          <FontAwesomeIcon className="icon" icon={faInfo} />
-          Clique aqui para mais info!
-        </SideNavBarBottomNeedHelp>
-      </SideNavBarBottom>
     </SideNavBar>
   );
 };

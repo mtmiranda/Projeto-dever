@@ -45,8 +45,8 @@ const SideNavBar = styled.section`
   a.active {
     box-shadow: rgba(0,0,0,0.05) 0px 0.2rem 0.2rem;
     background: #fff;
-  }
 
+  }
 `;
 
 const SideNavBarTop = styled.section`
