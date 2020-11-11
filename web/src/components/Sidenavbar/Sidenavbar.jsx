@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { NotesContext } from "context/context";
 import StoreContext from "../Store/Context";
-
+import NewNote from "../NewNote/index";
 //import dropdown from "dropdown.js";
 
 //IMPORTS ICONS
@@ -106,11 +106,12 @@ const Sidenavbar = () => {
         </UniversityDescription>
 
         <SideNavBarTopCreateNote>
-          <NoteButton onClick={handleCreateNote}>
+          {/* <NoteButton onClick={handleCreateNote}>
             <FontAwesomeIcon className="icon" icon={faPlus} />
 
             <NoteTitle>Nova Nota</NoteTitle>
-          </NoteButton>
+  </NoteButton> */}
+        <NewNote />
         </SideNavBarTopCreateNote>
         <SideNavBarTopMenuItem>
           <ul>

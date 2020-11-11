@@ -36,11 +36,17 @@ const FileStar = styled(FiStar)`
 
 const SideNavBar = styled.section`
   width: 100%;
-  background: #fff;
+  background: transparent;
   display: flex;
   flex-direction: column;
   color: #333;
   height: 100%;
+
+  a.active {
+    box-shadow: rgba(0,0,0,0.05) 0px 0.2rem 0.2rem;
+    background: #fff;
+  }
+
 `;
 
 const SideNavBarTop = styled.section`
@@ -176,6 +182,10 @@ const NoteTitle = styled.div`
 
 const SideNavBarTopMenuItem = styled.div`
   margin-top: 10px;
+  display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 
   ul {
     li {
@@ -185,19 +195,25 @@ const SideNavBarTopMenuItem = styled.div`
         padding: 10px 18px;
         color: #333;
         text-decoration: none;
-        background: #dddd;
+        background: rgba(241, 241, 241, .5);
+        text-align: center;
     width: 56px;
     display: flex;
     flex-direction: column;
     margin-bottom: 14px;
     padding: 24px 16px;
     border-radius: 5px;
+    font-size: 13px;
+    box-shadow: inset -2px -2px 6px rgba(255,255,255,0.7), inset -2px -2px 4px rgba(255,255,255,0.5), inset 2px 2px 2px rgba(255,255,255,0.075), inset 2px 2px 4px rgba(0,0,0,0.15);
+         svg {
+          margin-bottom: 6px;
+         }
 
         .icon {
           font-size: 14px;
           margin-right: 8px;
         }
-
+/*
         &:hover {
           cursor: pointer;
         }
@@ -205,7 +221,7 @@ const SideNavBarTopMenuItem = styled.div`
         &:focus,
         &:active {
           background: #f1f1f1;
-        }
+        }*/
       }
     }
   }

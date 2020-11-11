@@ -37,10 +37,11 @@ export const Menu = styled.aside`
   display: block;
   /*position: fixed;*/
   max-width: 100%;
-  box-shadow: rgba(0,0,0,0.04) 0px 0.5rem 1.5rem;
+  //box-shadow: rgba(0,0,0,0.04) 0px 0.5rem 1.5rem;
   border-bottom-right-radius: 3px;
   overflow-y: auto;
   overflow-x:hidden;
+  background: #fcfcfc;
 `;
 
 export const Main = styled.main`

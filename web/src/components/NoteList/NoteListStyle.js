@@ -41,7 +41,7 @@ const MainNoteList = styled.section`
 
 const SearchBlock = styled.div`
   display: flex;
-  align-itens: center;
+  align-items: center;
   background: #f1f1f1;
   padding: 6px 10px;
   border-radius: 5px;
@@ -65,7 +65,7 @@ const NoteListHeader = styled.section`
   display: flex;
   align-items: flex-start;
   flex-direction: column;
-  height: 100px;
+  height: 137px;
   box-sizing: border-box;
   background: transparent;
 `;

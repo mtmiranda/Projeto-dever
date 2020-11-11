@@ -10,7 +10,7 @@ import { NotesContext } from "../../context/context";
 import { listFormatDate } from "../../utils/helpers";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-
+import NewNote from "../NewNote/index";
 import {
   MainNoteList,
   NoteListHeader,
@@ -75,6 +75,9 @@ const NoteList = (props) => {
             <input placeholder="Procure uma nota"></input>
           </SearchBlock>
         </NoteListHeaderTitle>
+
+        <NewNote />
+
         <NoteListHeaderSubHead>
           <h1>{title}</h1>
           <NoteCount>{notesContext.notesState.length} notas</NoteCount>
