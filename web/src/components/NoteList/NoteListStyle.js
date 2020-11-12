@@ -12,6 +12,9 @@ const StyledIcon = styled(FiFileText)`
   border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 0.2rem 0.2rem;
   margin-right: 10px;
+  position: absolute;
+  top: 15px;
+  left: 11px;
 `;
 
 const MainNoteList = styled.section`
@@ -153,6 +156,7 @@ const NoteCard = styled.section`
   border-radius: 6px;
   padding: 10px;
   transition: 1s;
+  position: relative;
 
   &:hover {
     box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.7),
@@ -169,8 +173,8 @@ const NoteCardHead = styled.div`
   font-size: 14px;
 `;
 
-const NoteCardTitle = styled.div`
-  width: 100%;
+const NoteCardTitle = styled.h1`
+  width: 75%;
   color: #333;
   font-weight: 600;
   white-space: nowrap;
@@ -184,9 +188,11 @@ const NoteCardTitle = styled.div`
   letter-spacing: 0.5px;
   font-family: "Roboto", sans-serif;
   padding: 4px;
+  margin-left: 44px;
+  margin-top: 6px;
 `;
 
-const NoteCardDesc = styled.div`
+const NoteCardDesc = styled.p`
   width: auto;
   color: #737373;
   margin-top: 5px;
@@ -198,10 +204,9 @@ const NoteCardDesc = styled.div`
   margin-left: 48px;
 `;
 
-const NoteCardDate = styled.div`
+const NoteCardDate = styled.p`
   font-size: 10px;
   margin-left: 48px;
-  margin-top: -5px;
 `;
 
 export {
