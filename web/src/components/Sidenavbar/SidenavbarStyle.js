@@ -88,7 +88,7 @@ const ProfileIcon = styled.div`
 
 const UniversityDescription = styled.div`
   margin-left: 27px;
-  font-size: 1.2em;
+  font-size: 1.1em;
   font-weight: bold;
   font-family: inherit;
   text-transform: uppercase;
@@ -100,7 +100,7 @@ const UniversityDescription = styled.div`
     margin-top: 5px;
     font-family: "Oswald", sans-serif;
     letter-spacing: .5px;
-    color: #2e0094;
+    color: #333;
     font-weight: bold;
     opacity: 0.9;
   }

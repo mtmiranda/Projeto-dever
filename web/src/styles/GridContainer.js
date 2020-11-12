@@ -29,7 +29,7 @@ export const GridLayout = styled.div`
 
 export const Header = styled.header`
   grid-area: header;
-  height: 4em;
+  height: 4.5em;
   display: flex; 
   background: #fff;
     border-radius: 5px;

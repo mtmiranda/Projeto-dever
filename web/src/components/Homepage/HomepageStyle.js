@@ -2,20 +2,21 @@ import styled, { keyframes } from "styled-components";
 import img from "../../assets/img/homepage-wallpaper.jpg";
 import { fadeIn } from "react-animations";
 import tada from "react-animations/lib/tada";
+import { motion } from "framer-motion";
 
 const containerAnimation = keyframes`${fadeIn}`;
 
 const welcomeBoxAnimation = keyframes`${tada}`;
 
-const ContainerWelcome = styled.section`
-  width: 100%;
-  height: 100%;
-  background-image: url(${img});
-  background-size: cover;
-  animation: 1.5s ${containerAnimation};
-  position: relative;
-`;
+export const ContainerWelcome = styled.section`
+  min-width:1320px;
+  margin: 0 auto;
+  border: 1px solid red;
+  height: calc(100% - 40px);
+  padding: 20px;
 
+`;
+/*
 const Overlay = styled.div`
   position: relative;
   top: 0;
@@ -29,19 +30,15 @@ const Overlay = styled.div`
   background: linear-gradient(90deg, #00e3d3 0%, #3d00c6 100%);
   opacity: 0.2;
 `;
+*/
+export const WelcomeBox = styled.div`
+  width: calc(100% - 40px);
+  background: #afaaff;
+  padding: 20px;
+  border-radius: 7px;
+  box-shadow: rgba(0,0,0,0.05) 0px 0.2rem 0.2rem;
+  height: 11rem;
 
-const WelcomeBox = styled.div`
-  position: absolute;
-  width: 37%;
-  height: auto;
-  background: white;
-  padding: 50px;
-  margin: 50px auto;
-  border-radius: 10px;
-  box-shadow: rgba(0, 0, 0, 0.04) 0px 0.5rem 1.5rem;
-  top: 30%;
-  left: 27%;
-  animation: 3s ${welcomeBoxAnimation};
 
   h1,
   h2 {
@@ -50,7 +47,9 @@ const WelcomeBox = styled.div`
 
   h1 {
     font-weight: bold;
-    font-size: 2em;
+    font-size: 1.7em;
+    text-transform: uppercase;
+    
   }
 
   h2 {
@@ -58,6 +57,38 @@ const WelcomeBox = styled.div`
     font-size: 1.5em;
     font-family: inherit;
   }
+
+
 `;
 
-export { ContainerWelcome, Overlay, WelcomeBox };
+export const ContainerBox = styled(motion.div)`
+
+    display: flex;
+    justify-content: space-evenly;
+    margin-top:20px;
+
+`;
+
+
+export const BoxDetails = styled(motion.div)`
+    width: 260px;
+    height: 86px;
+    box-sizing: border-box;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    box-shadow: -6px -6px 8px rgba(255, 255, 255, 0.9),
+    5px 5px 8px rgba(0, 0, 0, 0.07);
+    -webkit-text-decoration: none;
+    text-decoration: none;
+    margin-bottom: 10px;
+    background: #fff;
+    border-radius: 6px;
+    padding: 10px;
+    -webkit-transition: 1s;
+    transition: 1s;
+`;

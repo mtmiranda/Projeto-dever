@@ -41,7 +41,7 @@ const TitlePrincipal = styled.h1`
 
 const IconUniversity = styled(GiCastle)`
   color: #2e0094;
-  font-size: 2.5em;
+  font-size: 3em;
   position: absolute;
   left: 10px;
   top: 10px;
@@ -160,6 +160,7 @@ const CardSection = styled.section`
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    margin-top: -20px
     }
 
   h2 {

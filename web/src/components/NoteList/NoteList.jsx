@@ -33,6 +33,7 @@ const NoteList = (props) => {
   const { title } = props;
   const match = useRouteMatch();
   const history = useHistory();
+  const totalNotes = notesContext.notesState.length;
 
   useEffect(() => {
     getNotes();
@@ -100,7 +101,7 @@ const NoteList = (props) => {
 
         <NoteListHeaderSubHead>
           <h1>{title}</h1>
-          <NoteCount>{notesContext.notesState.length} notas</NoteCount>
+          <NoteCount>{totalNotes} notas</NoteCount>
         </NoteListHeaderSubHead>
       </NoteListHeader>
 
