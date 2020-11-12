@@ -1,33 +1,20 @@
 import React, { useState, useContext } from "react";
 import { NotesContext } from "context/context";
 import StoreContext from "../Store/Context";
-import NewNote from "../NewNote/index";
 //import dropdown from "dropdown.js";
 
 //IMPORTS ICONS
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faAngleDown,
-  faInfo,
-  faPlus,
-  faHome,
-} from "@fortawesome/free-solid-svg-icons";
 
 //IMPORTS STYLED COMPONENTS
 import {
   SideNavBar,
   SideNavBarTop,
-  SideNavBarTopProfile,
-  ProfileIcon,
-  ProfileTitle,
   SideNavBarTopCreateNote,
   SideNavBarTopMenuItem,
   FilePlus,
   FileTrash,
   FileStar,
   FileHome,
-  UniversityDescription,
-  SiglaUniversity,
 } from "./SidenavbarStyle";
 
 //ROTAS
@@ -61,6 +48,7 @@ const Sidenavbar = () => {
     }
   };
 
+
   function handleClickDrop(e) {
     e.preventDefault();
     var box = document.querySelector(".dropdown-menu");
@@ -70,6 +58,7 @@ const Sidenavbar = () => {
       box.style.display = "none";
     }
   }
+ 
   /*
   window.onload = function() {
     var ul = document.querySelector(".ulSide");
@@ -86,33 +75,6 @@ const Sidenavbar = () => {
   return (
     <SideNavBar>
       <SideNavBarTop>
-        <SideNavBarTopProfile>
-          <ProfileIcon>M</ProfileIcon>
-          <ProfileTitle>
-            Matheus Moreira
-            <div className="dropdown-container" onClick={handleClickDrop}>
-              <div className="dropdown-toggle click-dropdown">
-                <FontAwesomeIcon className="icon" icon={faAngleDown} />
-
-                <div className="dropdown-menu">
-                  <button type="button">Perfil</button>
-                  <button type="button" onClick={() => setToken(null)}>
-                    Sair
-                  </button>
-                </div>
-              </div>
-            </div>
-          </ProfileTitle>
-        </SideNavBarTopProfile>
-
-        <UniversityDescription>
-          <p>
-            Universidade <br />
-            CastleStone (UCS)
-            <SiglaUniversity />
-          </p>
-        </UniversityDescription>
-
         <SideNavBarTopCreateNote>
         </SideNavBarTopCreateNote>
         <SideNavBarTopMenuItem>

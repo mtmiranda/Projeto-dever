@@ -1,13 +1,27 @@
 import styled from "styled-components";
 
-import { FiFileText, FiTrash2, FiStar, FiHome } from "react-icons/fi";
+import { FiFileText, FiTrash2, FiStar, FiHome, FiUser, FiLogOut } from "react-icons/fi";
 import { GiCastle } from "react-icons/gi";
 /*Icons settings*/
 
+const FileLogOut = styled(FiLogOut)`
+  color: #333;
+  font-size: 15.5px;
+  margin-right: 4px;
+`;
+
+const FilePerfil = styled(FiUser)`
+  color: #333;
+  font-size: 15.5px;
+  margin-right: 4px;
+`;
+
+
 const SiglaUniversity = styled(GiCastle)`
   color: #333;
-  font-size: 18px;
-  margin-left: 8px;
+  font-size: 30px;
+  margin-right: 8px;
+  color: #2e0094;
 `;
 
 const FileHome = styled(FiHome)`
@@ -56,8 +70,9 @@ const SideNavBarTop = styled.section`
 const SideNavBarTopProfile = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   padding: 15px;
+  width: 40%;
 `;
 
 const ProfileIcon = styled.div`
@@ -73,21 +88,36 @@ const ProfileIcon = styled.div`
 
 const UniversityDescription = styled.div`
   margin-left: 27px;
-  font-size: 1.1em;
+  font-size: 1.2em;
   font-weight: bold;
   font-family: inherit;
+  text-transform: uppercase;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  
+  p {
+    margin-top: 5px;
+    font-family: "Oswald", sans-serif;
+    letter-spacing: .5px;
+    color: #2e0094;
+    font-weight: bold;
+    opacity: 0.9;
+  }
+
 `;
 
 const ProfileTitle = styled.div`
+  
+  .container {
   display: flex;
   align-items: center;
   flex: 1;
   margin-left: 10px;
-  font-family: "Oswald", sans-serif;
+
   font-size: 15px;
-  color: #2e0094;
+  color: #333;
   font-weight: bold;
-  letter-spacing: 0.2px;
   opacity: 0.9;
   .icon {
     margin: 0 10px;
@@ -102,31 +132,43 @@ const ProfileTitle = styled.div`
   .dropdown-toggle .dropdown-menu {
     display: none;
     background: #fff;
-    width: 6em;
+    width: 12rem;
+    max-width: calc(100vw - 24px);
     position: absolute;
-    color: #333;
+    color: rgb(55,53,47);
     border-radius: 3px;
-    box-shadow: -6px -6px 14px rgba(255, 255, 255, 0.5),
-      -6px -6px 10px rgba(255, 255, 255, 0.5),
-      6px 6px 8px rgba(255, 255, 255, 0.075), 6px 6px 10px rgba(0, 0, 0, 0.15);
-    left: 10px;
+    box-shadow: rgba(15,15,15,0.03) 0px 0px 0px 1px, rgba(15,15,15,0.1) 0px 3px 4px, rgba(15,15,15,0.2) 0px 9px 18px;
+    left: -134px;
     padding-bottom: 4px;
+    height: 100px;
+    top: 30px;
+    h2 {
+      color: rgba(55, 53, 47, 0.6);
+      margin-bottom: 1px;
+    padding: 12px;
+    box-shadow: rgba(55, 53, 47, 0.09) 0px 1px 0px;
+    }
+
   }
 
   .dropdown-menu button {
+    font-family: "Oswald", sans-serif;
     border: none;
-    font-size: 12px;
+    font-size: 14px;
     background: #fff;
     width: 100%;
     padding: 5px 8px;
     text-align: left;
-    text-transform: uppercase;
-    border-bottom: 0.2px solid rgba(51, 51, 51, 0.3);
     cursor: pointer;
 
     &:last-child {
       border-bottom: none;
     }
+    
+    &:focus {
+      border: none;
+    }
+  }
   }
 `;
 
@@ -181,7 +223,7 @@ const NoteTitle = styled.div`
 `;
 
 const SideNavBarTopMenuItem = styled.div`
-  margin-top: 10px;
+  margin-top: 83px;
   display: flex;
     justify-content: center;
     flex-direction: column;
@@ -263,4 +305,6 @@ export {
   FileHome,
   UniversityDescription,
   SiglaUniversity,
+  FilePerfil,
+  FileLogOut,
 };

@@ -65,6 +65,26 @@ const NoteList = (props) => {
       });
     }
   };
+  function myFunction() {
+    // Declare variables
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.querySelector('.myInput');
+    filter = input.value.toUpperCase();
+    ul = document.getElementById(".noteSet");
+    li = ul.getElementsByTagName('.noteTitle');
+  
+    // Loop through all list items, and hide those who don't match the search query
+    for (i = 0; i < li.length; i++) {
+      a = li[i].getElementsByTagName("a")[0];
+      txtValue = a.textContent || a.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        li[i].style.display = "";
+      } else {
+        li[i].style.display = "none";
+      }
+    }
+  }
+ 
 
   return (
     <MainNoteList>
@@ -72,7 +92,7 @@ const NoteList = (props) => {
         <NoteListHeaderTitle>
           <SearchBlock>
             <FontAwesomeIcon className="icon" icon={faSearch} />
-            <input placeholder="Procure uma nota"></input>
+            <input className="myInput" onkeyup={myFunction} placeholder="Procure uma nota"></input>
           </SearchBlock>
         </NoteListHeaderTitle>
 
@@ -94,9 +114,9 @@ const NoteList = (props) => {
                 note,
               }}
             >
-              <NoteCard>
+              <NoteCard className="noteSet">
                 <NoteCardHead>
-                  <NoteCardTitle>
+                  <NoteCardTitle className="noteTitle" >
                     <StyledIcon /> {note.title}
                   </NoteCardTitle>
                   <NoteCardDate>{listFormatDate(note.updatedAt)}</NoteCardDate>

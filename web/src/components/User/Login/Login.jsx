@@ -69,6 +69,7 @@ const UserLogin = () => {
     <>
       <Container>
         <FormSection>
+          <IconUniversity />
           <Form onSubmit={onSubmit}>
             <TitleForm>Login</TitleForm>
 
@@ -125,15 +126,17 @@ const UserLogin = () => {
           </Form>
         </FormSection>
         <CardSection>
-          <IconUniversity />
-          <CardText>
+          
+          <div>
+        
             <TitlePrincipal>Universidade Castle Stone</TitlePrincipal>
-            <h2>Olá, Aluno!</h2>
-            <h2>
-              Insira as credenciais de acesso para começar a visualizar suas
+            <h2>Bem vindo!</h2>
+            <h3>
+               Agora insira as suas credenciais de acesso para começar a visualizar suas
               anotações.
-            </h2>
-          </CardText>
+            </h3>
+
+            </div>
         </CardSection>
       </Container>
     </>

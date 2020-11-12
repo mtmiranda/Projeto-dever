@@ -29,6 +29,13 @@ export const GridLayout = styled.div`
 
 export const Header = styled.header`
   grid-area: header;
+  height: 4em;
+  display: flex; 
+  background: #fff;
+    border-radius: 5px;
+    box-shadow: rgba(0,0,0,0.05) 0px 0.2rem 0.2rem;
+    
+    margin-bottom: 10px;
   
 `;
 

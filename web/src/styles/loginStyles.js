@@ -30,20 +30,21 @@ const Container = styled.section`
 `;
 
 const TitlePrincipal = styled.h1`
-  font-family: "Oswald", sans-serif;
-  font-size: 2.2em;
-  text-transform: uppercase;
-  font-weight: bold;
-  color: #2e0094;
-  margin: 33px 10px;
+ font-family: "Oswald",sans-serif;
+    font-size: 1.9em;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #2e0094;
+    margin: 10px 10px;
+    text-align: center;
 `;
 
 const IconUniversity = styled(GiCastle)`
   color: #2e0094;
-  font-size: 7.5em;
-  position: relative;
-  left: 222px;
-  top: 80px;
+  font-size: 2.5em;
+  position: absolute;
+  left: 10px;
+  top: 10px;
 `;
 
 //ESTILOS DO FORM
@@ -149,6 +150,36 @@ const CardSection = styled.section`
   background: linear-gradient(#00ffed, #3d00c6);
   background-size: auto;
   background-position-x: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+    div {
+      margin-left: 86px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    }
+
+  h2 {
+    color: #fff;
+    text-align: center;
+    font-size: 1.2em;
+    font-family: inherit;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  h3 {
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: 400;
+    width: 82%;
+  }
+
+
 `;
 
 const CardText = styled.div`
@@ -158,13 +189,7 @@ const CardText = styled.div`
   left: 21%;
   width: 80%;
 
-  h2 {
-    margin: 10px;
-    color: #fff;
-    font-weight: bold;
-    font-size: 1.5em;
-    font-family: inherit;
-  }
+  
 `;
 
 export {
