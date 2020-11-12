@@ -11,7 +11,6 @@ const welcomeBoxAnimation = keyframes`${tada}`;
 export const ContainerWelcome = styled.section`
   min-width:1320px;
   margin: 0 auto;
-  border: 1px solid red;
   height: calc(100% - 40px);
   padding: 20px;
 
@@ -31,9 +30,12 @@ const Overlay = styled.div`
   opacity: 0.2;
 `;
 */
+
+/** VER POSSIBILIDADES DE CORES, por isso deixei em branco */
+
 export const WelcomeBox = styled.div`
   width: calc(100% - 40px);
-  background: #afaaff;
+  background: #ffffff;
   padding: 20px;
   border-radius: 7px;
   box-shadow: rgba(0,0,0,0.05) 0px 0.2rem 0.2rem;
