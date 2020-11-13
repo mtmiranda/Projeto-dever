@@ -44,6 +44,10 @@ const Homepage = () => {
           c
         </BoxDetails>
 
+        <BoxDetails>
+          b
+        </BoxDetails>
+
         </ContainerBox>
 
     </ContainerWelcome>

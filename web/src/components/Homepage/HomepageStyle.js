@@ -9,7 +9,7 @@ const containerAnimation = keyframes`${fadeIn}`;
 const welcomeBoxAnimation = keyframes`${tada}`;
 
 export const ContainerWelcome = styled.section`
-  min-width:1320px;
+  width:1320px;
   margin: 0 auto;
   height: calc(100% - 40px);
   padding: 20px;
@@ -29,6 +29,8 @@ const Overlay = styled.div`
   background: linear-gradient(90deg, #00e3d3 0%, #3d00c6 100%);
   opacity: 0.2;
 `;
+
+#f2f3f7
 */
 
 /** VER POSSIBILIDADES DE CORES, por isso deixei em branco */
@@ -73,8 +75,8 @@ export const ContainerBox = styled(motion.div)`
 
 
 export const BoxDetails = styled(motion.div)`
-    width: 260px;
-    height: 86px;
+    width: 180px;
+    height: 150px;
     box-sizing: border-box;
     display: -webkit-box;
     display: -webkit-flex;
