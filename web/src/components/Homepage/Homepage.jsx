@@ -1,12 +1,17 @@
-import React from "react";
-import { ContainerWelcome, WelcomeBox, ContainerBox, BoxDetails } from "./HomepageStyle";
+import React, {useContext} from "react";
+import { ContainerWelcome, WelcomeBox, ContainerBox, BoxDetails, BannerBox } from "./HomepageStyle";
 import { motion, useCycle } from "framer-motion";
-const Homepage = () => {
+import { FilePlus, FileStar, FileEdit } from "../Sidenavbar/SidenavbarStyle";
+import NewNote from "../NewNote/index";
+import { NavLink, useHistory } from "react-router-dom";
+
+const Homepage = (props) => {
   
   const [animate, cycle] = useCycle(
     { scale: 1, rotate: 0 },
     { scale: 1.25, rotate: 90 }
   );
+ 
 
   return (
     <ContainerWelcome className="radial-gradient">
@@ -14,7 +19,7 @@ const Homepage = () => {
       <WelcomeBox>
         <h1>
           Seja Bem vindo(a) ao sistema de anotações da Universidade Castle
-          Stone:
+          Stone
         </h1>
         <h2>
           Aqui voce poderá armazenar suas anotações e consultá-las durante seu
@@ -22,31 +27,51 @@ const Homepage = () => {
           suas disciplinas!
         </h2>
       </WelcomeBox>
-
+        <BannerBox/>
       <ContainerBox>
-        <BoxDetails>
-          a
-        </BoxDetails>
+       
 
         <BoxDetails 
-        drag
-        dragConstraints={{ top: 0, right: 0, bottom: 0, left: 0 }}
-        dragTransition={{ bounceStiffness: 100, bounceDamping: 20 }}
-        dragElastic={0.4} >
-          b
+        initial={{ y: -14 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 1 }}
+        >
+          <NewNote/>
+          <h2>Crie suas anotações</h2>
+        
         </BoxDetails >
 
-        <BoxDetails 
-        drag
-        dragConstraints={{ top: 0, right: 0, bottom: 0, left: 0 }}
-        dragTransition={{ bounceStiffness: 100, bounceDamping: 20 }}
-        dragElastic={0.4} >
-          c
+        <BoxDetails
+        initial={{ y: -10 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 1 }}
+        >           
+        <NavLink to="/all-notes">
+                <FilePlus/>
+          </NavLink>
+        <h2>Acesse suas anotações</h2>
         </BoxDetails>
 
-        <BoxDetails>
-          b
+        <BoxDetails 
+        initial={{ y: -8 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 1 }}
+        >
+        <NavLink to="/fav">
+        <FileStar />
+        </NavLink>
+         <h2>Favorite suas anotações</h2>
         </BoxDetails>
+
+        <BoxDetails
+        initial={{ y: -6 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 1 }}
+        >
+          <FileEdit />
+          <h2>Edite suas anotações</h2>
+
+          </BoxDetails>
 
         </ContainerBox>
 

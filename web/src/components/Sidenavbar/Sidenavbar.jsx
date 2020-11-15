@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import { NotesContext } from "context/context";
 import StoreContext from "../Store/Context";
+import SvgComponent from "../../assets/SvgComponents/index";
 //import dropdown from "dropdown.js";
 
 //IMPORTS ICONS
@@ -74,8 +75,9 @@ const Sidenavbar = () => {
 
   return (
     <SideNavBar>
-      <SideNavBarTop>
+      <SideNavBarTop>  
         <SideNavBarTopCreateNote>
+        <SvgComponent />
         </SideNavBarTopCreateNote>
         <SideNavBarTopMenuItem>
           <ul className="ulSide">
@@ -89,13 +91,13 @@ const Sidenavbar = () => {
             <li>
               <NavLink to="/all-notes">
                 {/*} <FontAwesomeIcon className="icon" icon={faStickyNote} />*/}
-                <FilePlus />
+                <FilePlus primary/>
                 Todas Anotações
               </NavLink>
             </li>
             <li>
               <NavLink to="/fav">
-                <FileStar />
+                <FileStar primary />
                 Favorito
               </NavLink>
             </li>

@@ -1,8 +1,17 @@
 import styled from "styled-components";
 
-import { FiFileText, FiTrash2, FiStar, FiHome, FiUser, FiLogOut } from "react-icons/fi";
+import { FiFileText, FiTrash2, FiStar, FiHome, FiUser, FiLogOut, FiEdit3 } from "react-icons/fi";
 import { GiCastle } from "react-icons/gi";
 /*Icons settings*/
+
+const FileEdit = styled(FiEdit3)`
+  color: ${props => props.primary ? "#333" : "var(--c-purpleBase)"};
+  background: ${props => props.primary ? "transparent" : "var(--backgroundIcon-homepage)"};
+  font-size: ${props => props.primary ? "18px" : "var( --fontIcon-homagepage)"};
+  padding: ${props => props.primary ? "0" : "var( --paddingIcon-homepage)"};
+  border-radius: ${props => props.primary ? "none" : "var(--borderIcon-rounded)"};
+`;
+
 
 const FileLogOut = styled(FiLogOut)`
   color: #333;
@@ -21,7 +30,7 @@ const SiglaUniversity = styled(GiCastle)`
   color: #333;
   font-size: 30px;
   margin-right: 8px;
-  color: #2e0094;
+  color: #000;
 `;
 
 const FileHome = styled(FiHome)`
@@ -31,8 +40,11 @@ const FileHome = styled(FiHome)`
 `;
 
 const FilePlus = styled(FiFileText)`
-  color: #333;
-  font-size: 18px;
+  color: ${props => props.primary ? "#333" : "var(--c-purpleBase)"};
+  background: ${props => props.primary ? "transparent" : "var(--backgroundIcon-homepage)"};
+  font-size: ${props => props.primary ? "18px" : "var( --fontIcon-homagepage)"};
+  padding: ${props => props.primary ? "0" : "var( --paddingIcon-homepage)"};
+  border-radius: ${props => props.primary ? "none" : "var(--borderIcon-rounded)"};
   margin-right: 3px;
 `;
 
@@ -43,8 +55,11 @@ const FileTrash = styled(FiTrash2)`
 `;
 
 const FileStar = styled(FiStar)`
-  color: #333;
-  font-size: 18px;
+  color: ${props => props.primary ? "#333" : "var(--c-purpleBase)"};
+  background: ${props => props.primary ? "transparent" : "var(--backgroundIcon-homepage)"};
+  font-size: ${props => props.primary ? "18px" : "var( --fontIcon-homagepage)"};
+  padding: ${props => props.primary ? "0" : "var( --paddingIcon-homepage)"};
+  border-radius: ${props => props.primary ? "none" : "var(--borderIcon-rounded)"};
   margin-right: 3px;
 `;
 
@@ -198,8 +213,9 @@ const SearchBlock = styled.div`
 `;
 
 const SideNavBarTopCreateNote = styled.div`
-  padding: 0 15px;
-  color: #fff;
+  padding: 5px;
+  margin-top: 12px;
+  margin-left: 7px;
 `;
 
 const NoteButton = styled.div`
@@ -223,7 +239,7 @@ const NoteTitle = styled.div`
 `;
 
 const SideNavBarTopMenuItem = styled.div`
-  margin-top: 83px;
+  margin-top: 20px;
   display: flex;
     justify-content: center;
     flex-direction: column;
@@ -307,4 +323,5 @@ export {
   SiglaUniversity,
   FilePerfil,
   FileLogOut,
+  FileEdit
 };

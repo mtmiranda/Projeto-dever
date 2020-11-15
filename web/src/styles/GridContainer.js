@@ -9,7 +9,7 @@ export const GridLayout = styled.div`
     "aside main main"
     "footer footer footer";
   /*Column, primeira coluna altera o valor do aside*/
-  grid-template-columns: 200px repeat(2, auto);
+  grid-template-columns: 210px repeat(2, auto);
   grid-template-rows: auto 100vh auto;
   -webkit-display: grid;
   -webkit-grid-template-areas: "aside header header" "aside main main"
@@ -40,9 +40,10 @@ export const Header = styled.header`
 `;
 
 export const Menu = styled.aside`
+  width: 210px;
   grid-area: aside;
   display: block;
-  /*position: fixed;*/
+  position: fixed;
   max-width: 100%;
   //box-shadow: rgba(0,0,0,0.04) 0px 0.5rem 1.5rem;
   border-bottom-right-radius: 3px;
@@ -60,4 +61,5 @@ export const Footer = styled.footer`
   grid-area: footer;
   height: 4em;
   background: #f1f1f1;
+  display: none;
 `;

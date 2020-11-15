@@ -42,7 +42,7 @@ const NewNote= () => {
 
   return (
     <NoteContainer>  
-    <NoteButton onClick={handleCreateNote}>
+    <NoteButton onClick={handleCreateNote} primary>
     <FontAwesomeIcon className="icon" icon={faPlus} />
     <NoteTitle>Nova Nota</NoteTitle>
     </NoteButton>
