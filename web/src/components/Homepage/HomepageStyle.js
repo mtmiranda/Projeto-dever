@@ -73,7 +73,7 @@ export const WelcomeBox = styled.div`
 
 `;
 
-export const BannerBox = styled.div`
+export const BannerBox = styled.section`
   width: calc(100% - 40px);
   background: linear-gradient(90deg,#00e3d3 0%,#3d00c6 100%);
   padding: 20px;
@@ -82,7 +82,7 @@ export const BannerBox = styled.div`
   height: 1.5rem;
 `;
 
-export const ContainerBox = styled(motion.div)`
+export const ContainerBox = styled(motion.section)`
 
 display: grid;
     width: 76%;
@@ -151,4 +151,18 @@ export const BoxDetails = styled(motion.div)`
 
     }
 
+`;
+export const ContainerInfo = styled(motion.section)`
+width: 100%;
+display: flex;
+justify-content: space-evenly;
+margin-top: 20px;
+`;
+
+export const BoxInfo = styled(motion.div)`
+width: 35%;
+height: 14rem;
+border-radius: 4px;
+box-shadow: var(--shadow-base);
+background: ${props => props.primary ? "var(--c-purpleLight)" : "var(--c-purpleBase)"};
 `;

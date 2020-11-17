@@ -30,13 +30,13 @@ const Container = styled.section`
 `;
 
 const TitlePrincipal = styled.h1`
- font-family: "Oswald",sans-serif;
-    font-size: 1.9em;
-    text-transform: uppercase;
-    font-weight: bold;
-    color: #2e0094;
-    margin: 10px 10px;
-    text-align: center;
+  font-family: "Oswald", sans-serif;
+  font-size: 1.9em;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #2e0094;
+  margin: 10px 10px;
+  text-align: center;
 `;
 
 const IconUniversity = styled(GiCastle)`
@@ -45,6 +45,12 @@ const IconUniversity = styled(GiCastle)`
   position: absolute;
   left: 10px;
   top: 10px;
+
+  @media (max-width: 680px) {
+    position: relative;
+    left: 10px;
+    top: 10px;
+  }
 `;
 
 //ESTILOS DO FORM
@@ -61,8 +67,10 @@ const FormSection = styled.section`
   left: 40px;
   animation: 3.5s ${bounceAnimation};
 
-  @media (max-width: 800px) {
-    background: #000;
+  @media (max-width: 680px) {
+    position: static;
+    width: 687px;
+    margin: 10px;
   }
 `;
 
@@ -74,6 +82,15 @@ const Form = styled.form`
   height: 100%;
   margin: 0px auto 100px;
   justify-content: center;
+
+  @media (min-width: 0px) and (max-width: 320px) {
+    margin: 0 -33px;
+    font-size: 0.9em;
+  }
+
+  @media (min-width: 321px) and (max-width: 680px) {
+    margin: 0 -20px;
+  }
 `;
 
 const TitleForm = styled.h1`
@@ -154,14 +171,30 @@ const CardSection = styled.section`
   align-items: center;
   justify-content: center;
 
-    div {
-      margin-left: 86px;
+  @media (max-width: 680px) {
+    left: -5px;
+  }
+
+  div {
+    margin-left: 86px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin-top: -20px
+    margin-top: -20px;
+
+    @media (min-width: 0px) and (max-width: 320px) {
+      font-size: 0.8em;
     }
+
+    @media (min-width: 321px) and (max-width: 360px) {
+      font-size: 0.9em;
+    }
+
+    @media (max-width: 680px) {
+      margin: 0;
+    }
+  }
 
   h2 {
     color: #fff;
@@ -179,8 +212,6 @@ const CardSection = styled.section`
     font-weight: 400;
     width: 82%;
   }
-
-
 `;
 
 const CardText = styled.div`
@@ -189,8 +220,6 @@ const CardText = styled.div`
   top: 11%;
   left: 21%;
   width: 80%;
-
-  
 `;
 
 export {

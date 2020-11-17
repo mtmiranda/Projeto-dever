@@ -1,7 +1,8 @@
 import React, {useContext} from "react";
-import { ContainerWelcome, WelcomeBox, ContainerBox, BoxDetails, BannerBox } from "./HomepageStyle";
+import { ContainerWelcome, WelcomeBox, ContainerBox, BoxDetails, BannerBox, ContainerInfo, BoxInfo } from "./HomepageStyle";
 import { motion, useCycle } from "framer-motion";
 import { FilePlus, FileStar, FileEdit } from "../Sidenavbar/SidenavbarStyle";
+import SvgComponentInfo from "../../assets/SvgComponents/boxInfo1";
 import NewNote from "../NewNote/index";
 import { NavLink, useHistory } from "react-router-dom";
 
@@ -74,6 +75,13 @@ const Homepage = (props) => {
           </BoxDetails>
 
         </ContainerBox>
+      <ContainerInfo>
+        <BoxInfo primary>
+         <SvgComponentInfo/>
+
+        </BoxInfo>
+        <BoxInfo></BoxInfo>
+      </ContainerInfo>
 
     </ContainerWelcome>
   );
