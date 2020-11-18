@@ -134,8 +134,13 @@ const UniversityDescription = styled.div`
     color: #333;
     font-weight: bold;
     opacity: 0.9;
+    
   }
-
+  @media (min-width: 320px) and (max-width: 480px) {
+  width: 98%;
+  align-self: center;
+  padding-bottom: 10px;
+  }
 `;
 
 const ProfileTitle = styled.div`
@@ -149,7 +154,7 @@ const ProfileTitle = styled.div`
   font-size: 15px;
   color: #333;
   font-weight: bold;
-  opacity: 0.9;
+  opacity: 1;
   .icon {
     margin: 0 10px;
     font-size: 12px;
@@ -187,6 +192,7 @@ const ProfileTitle = styled.div`
     border: none;
     font-size: 14px;
     background: #fff;
+    opacity: 1;
     width: 100%;
     padding: 5px 8px;
     text-align: left;

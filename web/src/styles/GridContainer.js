@@ -43,7 +43,9 @@ export const Header = styled.header`
     
     margin-bottom: 10px;
     @media (min-width: 320px) and (max-width: 480px) {
-    
+      flex-direction: column-reverse;
+    align-items: flex-end;
+    height: auto;
     }
 `;
 

@@ -52,6 +52,8 @@ const NoteHeader = styled.section`
 const NoteHeaderDate = styled.div`
   font-size: 14px;
   color: #737373;
+  display: flex;
+  align-items: center;
 `;
 
 const NoteHeaderActionBtn = styled.div`

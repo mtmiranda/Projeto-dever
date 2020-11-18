@@ -167,12 +167,12 @@ const Note = () => {
   return (
     <MainNote>
       <NoteHeader>
-      <MenuButton onClick={handleClickMenu}
+      
+        <NoteHeaderDate>
+        <MenuButton onClick={handleClickMenu}
       animate={animate}
       onTap={() => cycle()}
       ><IconMenu/></MenuButton>
-        <NoteHeaderDate>
-
           Editada por ultimo em {noteFormatDate(updatedAt)}
         </NoteHeaderDate>
         <NoteHeaderActionBtn>

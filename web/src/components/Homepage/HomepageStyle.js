@@ -14,6 +14,10 @@ export const ContainerWelcome = styled.section`
   height: calc(100% - 40px);
   padding: 20px;
 
+  @media (min-width: 320px) and (max-width: 610px) {
+    width: 100%;
+  }
+
 `;
 /*
 const Overlay = styled.div`
@@ -45,7 +49,7 @@ export const WelcomeBox = styled.div`
   height: 8rem;
   margin-bottom: 15px;
   border: .5px solid rgba(0,0,0,.05);
-  position: relative;
+  
 
   h1,
   h2 {
@@ -74,7 +78,16 @@ export const WelcomeBox = styled.div`
     margin: 0 auto;
     padding: 20px;
   }
-
+  @media (min-width: 320px) and (max-width: 610px) {
+    height: auto;
+    h1 {
+      width: 100%;
+      font-size: 1.3em;
+    }
+    h2 {
+      font-size: 1em;
+    }
+  }
 
 `;
 
@@ -120,6 +133,7 @@ export const BoxDetails = styled(motion.div)`
     -webkit-transition: 1s;
     transition: 1s;
     justify-content: center;
+    margin: 0 auto;
     
     svg {
       margin-bottom: 10px;
@@ -162,6 +176,10 @@ width: 100%;
 display: flex;
 justify-content: space-evenly;
 margin-top: 20px;
+@media (min-width: 320px) and (max-width: 480px) { 
+  flex-direction: column;
+}
+
 `;
 
 export const BoxInfo = styled(motion.div)`
@@ -191,6 +209,23 @@ svg {
   width: 340px;
     margin-left: ${props => props.primary ? "-63px" : "0"};;
     margin-right: ${props => props.primary ? "0" : "-63px"};;
+  }
+
+  @media (min-width: 320px) and (max-width: 480px) { 
+    width: 90%;
+    margin-bottom: 10px;
+    height: 12rem;
+
+    svg { 
+      width: 200px;
+    }
+
+    h2 {
+      font-size: 1.3em;
+    }
+    h3 {
+      font-size: 1em;
+    }
   }
 
 `;
