@@ -45,7 +45,7 @@ export const WelcomeBox = styled.div`
   height: 8rem;
   margin-bottom: 15px;
   border: .5px solid rgba(0,0,0,.05);
-
+  position: relative;
 
   h1,
   h2 {
@@ -58,7 +58,12 @@ export const WelcomeBox = styled.div`
     font-size: 1.6em;
     text-transform: uppercase;
     text-align: center;
-    
+    background: #94e6e1;
+    padding: 9px 7px;
+    width: 55%;
+    margin: 0 auto;
+    border-radius: 4px;
+    color: #000;
   }
 
   h2 {
@@ -160,9 +165,32 @@ margin-top: 20px;
 `;
 
 export const BoxInfo = styled(motion.div)`
-width: 35%;
+width: ${props => props.primary ? "35%" : "43%"};;
 height: 14rem;
 border-radius: 4px;
 box-shadow: var(--shadow-base);
-background: ${props => props.primary ? "var(--c-purpleLight)" : "var(--c-purpleBase)"};
+background: ${props => props.primary ? "var(--c-purpleLight)" : "#94e6e1"};
+display: flex;
+align-items: center;
+padding: 10px;
+
+h2 {
+  font-size: 1.8em;
+    font-weight: 600;
+    font-family: "Oswald",sans-serif;
+    margin-bottom: 5px;
+}
+h3 {
+  font-size: 1.2em;
+}
+div {
+  width: 50%;
+}
+
+svg { 
+  width: 340px;
+    margin-left: ${props => props.primary ? "-63px" : "0"};;
+    margin-right: ${props => props.primary ? "0" : "-63px"};;
+  }
+
 `;

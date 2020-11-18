@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
-import { FiFileText, FiTrash2, FiStar, FiHome, FiUser, FiLogOut, FiEdit3 } from "react-icons/fi";
+import { FiFileText, FiTrash2, FiStar, FiHome, FiUser, FiLogOut, FiEdit3, FiMenu } from "react-icons/fi";
 import { GiCastle } from "react-icons/gi";
 /*Icons settings*/
 
@@ -17,6 +18,14 @@ const FileLogOut = styled(FiLogOut)`
   color: #333;
   font-size: 15.5px;
   margin-right: 4px;
+`;
+
+
+
+const FileMenu = styled(FiMenu)`
+  color: #333;
+  font-size: 1.5em;
+ 
 `;
 
 const FilePerfil = styled(FiUser)`
@@ -70,7 +79,7 @@ const SideNavBar = styled.section`
   flex-direction: column;
   color: #333;
   height: 100%;
-
+  
   a.active {
     box-shadow: rgba(0,0,0,0.05) 0px 0.2rem 0.2rem;
     background: #fff;
@@ -80,6 +89,13 @@ const SideNavBar = styled.section`
 
 const SideNavBarTop = styled.section`
   flex: 1;
+  @media (min-width: 320px) and (max-width: 480px) {
+    background: rgb(250, 250, 250);
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0.2rem 0.2rem;
+    border-radius: 6px;
+    border: 0.5px solid rgba(0, 0, 0, 0.05);
+  }
+
 `;
 
 const SideNavBarTopProfile = styled.div`
@@ -263,6 +279,11 @@ const SideNavBarTopMenuItem = styled.div`
     border-radius: 5px;
     font-size: 13px;
     box-shadow: inset -2px -2px 6px rgba(255,255,255,0.7), inset -2px -2px 4px rgba(255,255,255,0.5), inset 2px 2px 2px rgba(255,255,255,0.075), inset 2px 2px 4px rgba(0,0,0,0.15);
+        
+        @media (min-width: 320px) and (max-width: 480px) {
+        width: 43px;     
+        padding: 17px 16px;
+        }
          svg {
           margin-bottom: 6px;
          }
@@ -301,6 +322,27 @@ const SideNavBarBottomNeedHelp = styled.div`
   }
 `;
 
+const MenuButton = styled(motion.button)`
+display: none;
+border: none;
+    width: 47px;
+    background: var(--c-purpleLight);
+    border-radius: 9em;
+    padding: 10px;
+    box-shadow: rgba(0,0,0,0.05) 0px 0.2rem 0.2rem;
+    /* padding: 10px; */
+    margin: 7px;
+    cursor: pointer;
+
+&:focus {
+  border:none;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+display: block;
+}
+
+`;
 export {
   SideNavBar,
   SideNavBarTop,
@@ -323,5 +365,8 @@ export {
   SiglaUniversity,
   FilePerfil,
   FileLogOut,
-  FileEdit
+  FileEdit,
+  MenuButton,
+  FileMenu,
+
 };

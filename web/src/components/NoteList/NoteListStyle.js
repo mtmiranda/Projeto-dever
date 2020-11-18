@@ -1,7 +1,10 @@
 import styled from "styled-components";
-import { FiFileText } from "react-icons/fi";
+import { motion } from "framer-motion";
+import { FiFileText} from "react-icons/fi";
 
 /*Icons settings*/
+
+
 
 const StyledIcon = styled(FiFileText)`
   color: #fff;
@@ -18,6 +21,7 @@ const StyledIcon = styled(FiFileText)`
 `;
 
 const MainNoteList = styled.section`
+display: block;
   height: 100%;
   width: 100px;
   max-width: 670px;
@@ -26,7 +30,6 @@ const MainNoteList = styled.section`
   /*border-right: 1px solid #e6e6e6;*/
   display: flex;
   flex-direction: column;
-
   a:hover,
   a:active {
     color: #333;
@@ -39,6 +42,11 @@ const MainNoteList = styled.section`
 
   a.active section:hover {
     box-shadow: rgba(0, 0, 0, 0.05) 0px 0.2rem 0.2rem;
+  }
+
+  @media (min-width: 320px) and (max-width: 480px) {
+  display: none;
+  min-width: 208px;
   }
 `;
 
@@ -164,6 +172,10 @@ const NoteCard = styled.section`
       inset 2px 2px 2px rgba(255, 255, 255, 0.075),
       inset 2px 2px 4px rgba(0, 0, 0, 0.15);
   }
+
+  @media (min-width: 320px) and (max-width: 480px) {
+    height: 68px;
+  }
 `;
 
 const NoteCardHead = styled.div`
@@ -202,6 +214,11 @@ const NoteCardDesc = styled.p`
   font-size: 12px;
   margin-top: 7px;
   margin-left: 48px;
+
+  @media (min-width: 320px) and (max-width: 480px) {
+    margin-top: 2px;
+  }
+
 `;
 
 const NoteCardDate = styled.p`

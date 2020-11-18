@@ -1,4 +1,29 @@
 import styled from "styled-components";
+import {  FiArrowLeftCircle } from "react-icons/fi";
+import { motion } from "framer-motion";
+
+const IconMenu = styled(FiArrowLeftCircle)`
+  color: white;
+  font-size: 1.5em;
+
+`;
+
+const MenuButton = styled(motion.button)`
+    background: linear-gradient(90deg,#a900ff 0%,#3d00c6 100%);
+    border-radius: 9em;
+    padding: 5px 6px 2px 6px;
+    box-shadow: rgba(0,0,0,0.05) 0px 0.2rem 0.2rem;
+    margin: 7px;
+    cursor: pointer;
+    border: none;
+    color: white;
+
+&:focus {
+  border:none;
+}
+
+`;
+
 
 const MainNote = styled.section`
   display: flex;
@@ -13,7 +38,7 @@ const NoteHeader = styled.section`
   height: 60px;
   width: 100%;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: space-between;
   padding: 20px;
   box-sizing: border-box;
@@ -99,4 +124,6 @@ export {
   NoteBody,
   NoteBodyHead,
   NoteBodyContent,
+  IconMenu,
+  MenuButton,
 };

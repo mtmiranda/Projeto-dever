@@ -3,6 +3,7 @@ import { ContainerWelcome, WelcomeBox, ContainerBox, BoxDetails, BannerBox, Cont
 import { motion, useCycle } from "framer-motion";
 import { FilePlus, FileStar, FileEdit } from "../Sidenavbar/SidenavbarStyle";
 import SvgComponentInfo from "../../assets/SvgComponents/boxInfo1";
+import SvgComponentInfo2 from "../../assets/SvgComponents/boxInfo2";
 import NewNote from "../NewNote/index";
 import { NavLink, useHistory } from "react-router-dom";
 
@@ -27,7 +28,7 @@ const Homepage = (props) => {
           período letivo. Fique à vontade para editar e customizar de acordo com
           suas disciplinas!
         </h2>
-      </WelcomeBox>
+        </WelcomeBox>
         <BannerBox/>
       <ContainerBox>
        
@@ -78,9 +79,20 @@ const Homepage = (props) => {
       <ContainerInfo>
         <BoxInfo primary>
          <SvgComponentInfo/>
-
+          <div>
+          <h2>Aqui você faz suas anotações em um único lugar
+          </h2>
+          <h3>Sem a necessidade de utilização de cadernos, papéis...</h3>
+          </div>
         </BoxInfo>
-        <BoxInfo></BoxInfo>
+        <BoxInfo>
+          <div>
+          <h2>Atualizações em breve
+          </h2>
+          <h3>Traremos a opção para você criar grupos, para compartilhar suas anotações com seus amigos!</h3>
+          </div>
+          <SvgComponentInfo2/>
+        </BoxInfo>
       </ContainerInfo>
 
     </ContainerWelcome>

@@ -25,6 +25,12 @@ export const GridLayout = styled.div`
   -moz-grid-template-rows: auto 100vh auto;
 
   grid-gap: 8px;
+
+  @media (min-width: 320px) and (max-width: 480px) {
+
+   grid-template-columns: repeat(3, auto);
+  }
+
 `;
 
 export const Header = styled.header`
@@ -36,7 +42,9 @@ export const Header = styled.header`
     box-shadow: rgba(0,0,0,0.05) 0px 0.2rem 0.2rem;
     
     margin-bottom: 10px;
-  
+    @media (min-width: 320px) and (max-width: 480px) {
+    
+    }
 `;
 
 export const Menu = styled.aside`
@@ -50,6 +58,13 @@ export const Menu = styled.aside`
   overflow-y: auto;
   overflow-x:hidden;
   background: #fcfcfc;
+z-index: 1;
+  @media (min-width: 320px) and (max-width: 480px) {
+    width:100px;
+    background: transparent;
+  }
+
+
 `;
 
 export const Main = styled.main`

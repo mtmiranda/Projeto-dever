@@ -16,6 +16,9 @@ import {
   FileTrash,
   FileStar,
   FileHome,
+  MenuButton,
+  FileMenu,
+  
 } from "./SidenavbarStyle";
 
 //ROTAS
@@ -50,32 +53,24 @@ const Sidenavbar = () => {
   };
 
 
-  function handleClickDrop(e) {
+
+  function handleClickMenu(e) {
     e.preventDefault();
-    var box = document.querySelector(".dropdown-menu");
-    if (box.style.display === "none") {
-      box.style.display = "block";
+    var menu = document.querySelector(".menu-content");
+    if (menu.style.display === "none") {
+        menu.style.display = "block";
     } else {
-      box.style.display = "none";
+      menu.style.display = "none";
     }
   }
  
-  /*
-  window.onload = function() {
-    var ul = document.querySelector(".ulSide");
-    var li = document.querySelector(".liSide");
 
-    if(document.body.classList.contains('.liSide')) {
-      document.querySelector(".liSide .active").remove();
-    }
-    
-
-  };*/
   
 
   return (
     <SideNavBar>
-      <SideNavBarTop>  
+      <MenuButton onClick={handleClickMenu}><FileMenu/></MenuButton> 
+      <SideNavBarTop className="menu-content">
         <SideNavBarTopCreateNote>
         <SvgComponent />
         </SideNavBarTopCreateNote>
