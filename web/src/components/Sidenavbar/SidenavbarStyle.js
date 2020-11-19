@@ -178,11 +178,16 @@ const ProfileTitle = styled.div`
     padding-bottom: 4px;
     height: 100px;
     top: 30px;
+    z-index: 1;
     h2 {
       color: rgba(55, 53, 47, 0.6);
       margin-bottom: 1px;
     padding: 12px;
     box-shadow: rgba(55, 53, 47, 0.09) 0px 1px 0px;
+    }
+
+    @media (min-width: 320px) and (max-width: 480px) { 
+      width: 10rem;
     }
 
   }
