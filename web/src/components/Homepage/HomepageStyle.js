@@ -176,7 +176,7 @@ width: 100%;
 display: flex;
 justify-content: space-evenly;
 margin-top: 20px;
-@media (min-width: 320px) and (max-width: 480px) { 
+@media (min-width: 320px) and (max-width: 610px) { 
   flex-direction: column;
 }
 
@@ -211,13 +211,14 @@ svg {
     margin-right: ${props => props.primary ? "0" : "-63px"};;
   }
 
-  @media (min-width: 320px) and (max-width: 480px) { 
+  @media (min-width: 320px) and (max-width: 610px) { 
     width: 90%;
     margin-bottom: 10px;
     height: 12rem;
 
     svg { 
-      width: 200px;
+      width: 150px;
+      margin-left: ${props => props.primary ? "-35px" : "0"};;
     }
 
     h2 {

@@ -36,10 +36,9 @@ const FilePerfil = styled(FiUser)`
 
 
 const SiglaUniversity = styled(GiCastle)`
-  color: #333;
   font-size: 30px;
   margin-right: 8px;
-  color: #000;
+  color: #333;
 `;
 
 const FileHome = styled(FiHome)`
@@ -89,7 +88,7 @@ const SideNavBar = styled.section`
 
 const SideNavBarTop = styled.section`
   flex: 1;
-  @media (min-width: 320px) and (max-width: 480px) {
+  @media (min-width: 320px) and (max-width: 610px) {
     background: rgb(250, 250, 250);
     box-shadow: rgba(0, 0, 0, 0.05) 0px 0.2rem 0.2rem;
     border-radius: 6px;
@@ -104,6 +103,9 @@ const SideNavBarTopProfile = styled.div`
   justify-content: flex-end;
   padding: 15px;
   width: 40%;
+  @media (min-width: 320px) and (max-width: 610px) {  
+  width: fit-content;
+  }
 `;
 
 const ProfileIcon = styled.div`
@@ -115,6 +117,8 @@ const ProfileIcon = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+
 `;
 
 const UniversityDescription = styled.div`
@@ -136,7 +140,7 @@ const UniversityDescription = styled.div`
     opacity: 0.9;
     
   }
-  @media (min-width: 320px) and (max-width: 480px) {
+  @media (min-width: 320px) and (max-width: 610px) {
   width: 98%;
   align-self: center;
   padding-bottom: 10px;
@@ -186,7 +190,7 @@ const ProfileTitle = styled.div`
     box-shadow: rgba(55, 53, 47, 0.09) 0px 1px 0px;
     }
 
-    @media (min-width: 320px) and (max-width: 480px) { 
+    @media (min-width: 320px) and (max-width: 610px) { 
       width: 10rem;
     }
 
@@ -291,7 +295,7 @@ const SideNavBarTopMenuItem = styled.div`
     font-size: 13px;
     box-shadow: inset -2px -2px 6px rgba(255,255,255,0.7), inset -2px -2px 4px rgba(255,255,255,0.5), inset 2px 2px 2px rgba(255,255,255,0.075), inset 2px 2px 4px rgba(0,0,0,0.15);
         
-        @media (min-width: 320px) and (max-width: 480px) {
+        @media (min-width: 320px) and (max-width: 610px) {
         width: 43px;     
         padding: 17px 16px;
         }
@@ -349,7 +353,7 @@ border: none;
   border:none;
 }
 
-@media (min-width: 320px) and (max-width: 480px) {
+@media (min-width: 320px) and (max-width: 610px) {
 display: block;
 }
 

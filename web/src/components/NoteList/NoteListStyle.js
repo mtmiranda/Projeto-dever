@@ -44,7 +44,7 @@ display: block;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 0.2rem 0.2rem;
   }
 
-  @media (min-width: 320px) and (max-width: 480px) {
+  @media (min-width: 320px) and (max-width: 610px) {
   display: none;
   min-width: 208px;
   }
@@ -173,7 +173,7 @@ const NoteCard = styled.section`
       inset 2px 2px 4px rgba(0, 0, 0, 0.15);
   }
 
-  @media (min-width: 320px) and (max-width: 480px) {
+  @media (min-width: 320px) and (max-width: 610px) {
     height: 68px;
   }
 `;
@@ -215,7 +215,7 @@ const NoteCardDesc = styled.p`
   margin-top: 7px;
   margin-left: 48px;
 
-  @media (min-width: 320px) and (max-width: 480px) {
+  @media (min-width: 320px) and (max-width: 610px) {
     margin-top: 2px;
   }
 

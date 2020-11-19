@@ -46,6 +46,10 @@ const NoteHeader = styled.section`
   margin-bottom: 15px;
   box-shadow: rgba(0,0,0,0.05) 0px 0.2rem 0.2rem;
     border-radius: 6px;
+
+    @media (min-width: 320px) and (max-width: 610px) {  
+      height: auto;
+    }
     
 `;
 

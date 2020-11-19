@@ -26,7 +26,7 @@ export const GridLayout = styled.div`
 
   grid-gap: 8px;
 
-  @media (min-width: 320px) and (max-width: 480px) {
+  @media (min-width: 320px) and (max-width: 610px) {
 
    grid-template-columns: repeat(3, auto);
   }
@@ -61,7 +61,7 @@ export const Menu = styled.aside`
   overflow-x:hidden;
   background: #fcfcfc;
 z-index: 1;
-  @media (min-width: 320px) and (max-width: 480px) {
+  @media (min-width: 320px) and (max-width: 610px) {
     width:100px;
     background: transparent;
   }
