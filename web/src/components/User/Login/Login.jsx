@@ -6,18 +6,20 @@ import StoreContext from "components/Store/Context";
 import { FaUserGraduate } from "react-icons/fa";
 import { RiLockPasswordFill } from "react-icons/ri";
 
-//STYLED COMPONETS IMPORTS
+//STYLED COMPONENTS IMPORTS
 import {
   Container,
+  TitlePrincipal,
+  IconUniversity,
   Form,
   FormInput,
   Button,
-  BouncyDiv,
   FormSection,
   InputBox,
   TitleForm,
   Error,
   CardSection,
+  CardText,
 } from "../../../styles/loginStyles";
 import { IconContext } from "react-icons/lib";
 
@@ -28,8 +30,11 @@ function initialState() {
 function login({ user, password }) {
   if (user === "admin" && password === "admin") {
     return { token: "1234" };
+  } else if (user == 202002220249 && password == 654321)
+    return { token: "1234" };
+  else {
+    return { error: "Matrícula ou Senha inválida" };
   }
-  return { error: "Matrícula ou Senha inválida" };
 }
 
 const UserLogin = () => {
@@ -62,9 +67,10 @@ const UserLogin = () => {
   }
 
   return (
-    <BouncyDiv>
+    <>
       <Container>
         <FormSection>
+          <IconUniversity />
           <Form onSubmit={onSubmit}>
             <TitleForm>Login</TitleForm>
 
@@ -120,9 +126,18 @@ const UserLogin = () => {
             <Button type="submit">Entrar</Button>
           </Form>
         </FormSection>
-        <CardSection></CardSection>
+        <CardSection>
+          <div>
+            <TitlePrincipal>Universidade Castle Stone</TitlePrincipal>
+            <h2>Bem vindo!</h2>
+            <h3>
+              Agora insira as suas credenciais de acesso para começar a
+              visualizar suas anotações.
+            </h3>
+          </div>
+        </CardSection>
       </Container>
-    </BouncyDiv>
+    </>
   );
 };
 

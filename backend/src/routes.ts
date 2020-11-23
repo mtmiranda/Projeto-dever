@@ -26,11 +26,13 @@ routes.get('/home', WorkspaceController.index);
 /*
 routes.post('/points', pointsController.create);
 routes.get('/points', pointsController.index);
-routes.get('/points/:id', pointsController.show)
+routes.get('/points/:id', pointsController.show);
 */
 
-/*Por que a gente escreveu index e não list?
-Porque é meio que um padrão da comunidade  quando a gente cria um  controller a gente ter os métodos nesses formatos aqui index, show, create/store, update, delete/destroy
+/*
+
+
+
 
 
 routes.get('/', (req: Request, res: Response) => {

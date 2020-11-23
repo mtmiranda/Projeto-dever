@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState, useContext, Fragment } from "react";
 import { useRouteMatch, useHistory, NavLink } from "react-router-dom";
 import {
   BASE_URL,
@@ -8,7 +8,9 @@ import {
 import { getRequest } from "../../utils/apiRequests";
 import { NotesContext } from "../../context/context";
 import { listFormatDate } from "../../utils/helpers";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import NewNote from "../NewNote/index";
 import {
   MainNoteList,
   NoteListHeader,
@@ -19,8 +21,10 @@ import {
   NoteCard,
   NoteCardHead,
   NoteCardTitle,
+  SearchBlock,
   NoteCardDesc,
   NoteCardDate,
+  StyledIcon,
 } from "./NoteListStyle";
 
 const NoteList = (props) => {
@@ -29,6 +33,7 @@ const NoteList = (props) => {
   const { title } = props;
   const match = useRouteMatch();
   const history = useHistory();
+  const totalNotes = notesContext.notesState.length;
 
   useEffect(() => {
     getNotes();
@@ -61,15 +66,29 @@ const NoteList = (props) => {
       });
     }
   };
+ 
+  
 
   return (
-    <MainNoteList>
+ 
+    
+    <MainNoteList className="noteContent">
       <NoteListHeader>
         <NoteListHeaderTitle>
-          <h1>{title}</h1>
+          <SearchBlock>
+            <FontAwesomeIcon className="icon" icon={faSearch} />
+            <input
+              className="myInput"
+              placeholder="Procure uma nota"
+            ></input>
+          </SearchBlock>
         </NoteListHeaderTitle>
+
+        <NewNote />
+
         <NoteListHeaderSubHead>
-          <NoteCount>{notesContext.notesState.length} notas</NoteCount>
+          <h1>{title}</h1>
+          <NoteCount>{totalNotes} notas</NoteCount>
         </NoteListHeaderSubHead>
       </NoteListHeader>
 
@@ -83,12 +102,15 @@ const NoteList = (props) => {
                 note,
               }}
             >
-              <NoteCard>
+              <NoteCard className="noteSet">
                 <NoteCardHead>
-                  <NoteCardTitle>{note.title}</NoteCardTitle>
+                  <StyledIcon />
+                  <NoteCardTitle className="noteTitle">
+                    {note.title}
+                  </NoteCardTitle>
+                  <NoteCardDate>{listFormatDate(note.updatedAt)}</NoteCardDate>
                   <NoteCardDesc>{note.desc}</NoteCardDesc>
                 </NoteCardHead>
-                <NoteCardDate>{listFormatDate(note.updatedAt)}</NoteCardDate>
               </NoteCard>
             </NavLink>
           ))
@@ -97,6 +119,7 @@ const NoteList = (props) => {
         )}
       </NoteListBody>
     </MainNoteList>
+  
   );
 };
 

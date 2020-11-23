@@ -4,7 +4,7 @@ import { NotesContext } from "../../context/context";
 import { deleteRequest, putRequest } from "../../utils/apiRequests";
 import { BASE_URL, DELETE_NOTE, UPDATE_NOTE } from "../../utils/apiEndpoints";
 import { noteFormatDate } from "../../utils/helpers";
-
+import { useCycle } from "framer-motion";
 import {
   faArchive,
   faBackward,
@@ -20,6 +20,8 @@ import {
   NoteBody,
   NoteBodyHead,
   NoteBodyContent,
+  IconMenu,
+  MenuButton,
 } from "./NoteStyle";
 
 const Note = () => {
@@ -146,11 +148,32 @@ const Note = () => {
     setError(null);
   };
 
+  
+  function handleClickMenu(e) {
+    e.preventDefault();
+    var menu = document.querySelector(".noteContent");
+    if (menu.style.display === "none") {
+        menu.style.display = "block";
+    } else {
+      menu.style.display = "none";
+    }
+  }
+
+  const [animate, cycle] = useCycle(
+    {  rotate: 0 },
+    {  rotate: 180 }
+)
+
   return (
     <MainNote>
       <NoteHeader>
+      
         <NoteHeaderDate>
-          Editada por ultimo em, {noteFormatDate(updatedAt)}
+        <MenuButton onClick={handleClickMenu}
+      animate={animate}
+      onTap={() => cycle()}
+      ><IconMenu/></MenuButton>
+          Editada por ultimo em {noteFormatDate(updatedAt)}
         </NoteHeaderDate>
         <NoteHeaderActionBtn>
           {!isArchive ? (
@@ -185,6 +208,7 @@ const Note = () => {
           <textarea
             value={desc}
             placeholder="Digite uma nota aqui..."
+            spellCheck="false"
             onChange={handleDescChange}
             onBlur={() => handleUpdateNote("desc")}
           ></textarea>

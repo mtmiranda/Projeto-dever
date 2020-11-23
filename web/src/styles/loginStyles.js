@@ -1,15 +1,56 @@
 import styled, { keyframes } from "styled-components";
 import { bounce } from "react-animations";
-import img from "../assets/card-forms-img.png";
+import { GiCastle } from "react-icons/gi";
+
+//ANIMATION
+const bounceAnimation = keyframes`${bounce}`;
 
 const Container = styled.section`
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
   width: 100vw;
   height: 100vh;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background: #f7f7f7;
+  background: linear-gradient(-45deg, #23a6d5, #d3d3d3, #23a6d5, #00ffed);
+  animation: gradient 15s ease infinite;
+  background-size: 400% 400%;
+`;
+
+const TitlePrincipal = styled.h1`
+  font-family: "Oswald", sans-serif;
+  font-size: 1.9em;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #2e0094;
+  margin: 10px 10px;
+  text-align: center;
+`;
+
+const IconUniversity = styled(GiCastle)`
+  color: #2e0094;
+  font-size: 3em;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+
+  @media (max-width: 680px) {
+    position: relative;
+    left: 10px;
+    top: 10px;
+  }
 `;
 
 //ESTILOS DO FORM
@@ -24,9 +65,12 @@ const FormSection = styled.section`
   box-shadow: rgba(0, 0, 0, 0.08) 0px 0.5rem 2rem;
   z-index: 999;
   left: 40px;
+  animation: 3.5s ${bounceAnimation};
 
-  @media (max-width: 800px) {
-    background: #000;
+  @media (max-width: 680px) {
+    position: static;
+    width: 687px;
+    margin: 10px;
   }
 `;
 
@@ -38,6 +82,15 @@ const Form = styled.form`
   height: 100%;
   margin: 0px auto 100px;
   justify-content: center;
+
+  @media (min-width: 0px) and (max-width: 320px) {
+    margin: 0 -33px;
+    font-size: 0.9em;
+  }
+
+  @media (min-width: 321px) and (max-width: 680px) {
+    margin: 0 -20px;
+  }
 `;
 
 const TitleForm = styled.h1`
@@ -108,23 +161,71 @@ const CardSection = styled.section`
   width: 481px;
   height: 610px;
   border-radius: 0.5rem;
-  background: url("${img}") no-repeat;
   left: -60px;
   box-shadow: rgba(0, 0, 0, 0.08) 0px 0.2rem 0.2rem;
   background-position-y: 160px;
   background: linear-gradient(#00ffed, #3d00c6);
   background-size: auto;
   background-position-x: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 680px) {
+    left: -5px;
+  }
+
+  div {
+    margin-left: 86px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: -20px;
+
+    @media (min-width: 0px) and (max-width: 320px) {
+      font-size: 0.8em;
+    }
+
+    @media (min-width: 321px) and (max-width: 360px) {
+      font-size: 0.9em;
+    }
+
+    @media (max-width: 680px) {
+      margin: 0;
+    }
+  }
+
+  h2 {
+    color: #fff;
+    text-align: center;
+    font-size: 1.2em;
+    font-family: inherit;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  h3 {
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: 400;
+    width: 82%;
+  }
 `;
 
-//ANIMATION
-const bounceAnimation = keyframes`${bounce}`;
-const BouncyDiv = styled.div`
-  animation: 2s ${bounceAnimation};
+const CardText = styled.div`
+  font-family: inherit;
+  position: relative;
+  top: 11%;
+  left: 21%;
+  width: 80%;
 `;
 
 export {
   Container,
+  IconUniversity,
+  TitlePrincipal,
   FormSection,
   Form,
   TitleForm,
@@ -133,5 +234,5 @@ export {
   Button,
   Error,
   CardSection,
-  BouncyDiv,
+  CardText,
 };
