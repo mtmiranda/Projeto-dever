@@ -6,7 +6,7 @@ export async function seed(knex: Knex) {
     await knex('usuarios').insert([
 
     { matricula: 'admin', nome: 'admin', senha: 'admin'}, 
-    { matricula: '20171', nome: 'Maria Lopes', senha: '123'}
+    { matricula: '202002220249', nome: 'Matheus Moreira', senha: '654321'}
 
 
 ]);

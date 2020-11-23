@@ -30,7 +30,8 @@ function initialState() {
 function login({ user, password }) {
   if (user === "admin" && password === "admin") {
     return { token: "1234" };
-  } else if (user == 202002220249 && password == 4321) return { token: "1234" };
+  } else if (user == 202002220249 && password == 654321)
+    return { token: "1234" };
   else {
     return { error: "Matrícula ou Senha inválida" };
   }
@@ -126,17 +127,14 @@ const UserLogin = () => {
           </Form>
         </FormSection>
         <CardSection>
-          
           <div>
-        
             <TitlePrincipal>Universidade Castle Stone</TitlePrincipal>
             <h2>Bem vindo!</h2>
             <h3>
-               Agora insira as suas credenciais de acesso para começar a visualizar suas
-              anotações.
+              Agora insira as suas credenciais de acesso para começar a
+              visualizar suas anotações.
             </h3>
-
-            </div>
+          </div>
         </CardSection>
       </Container>
     </>

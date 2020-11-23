@@ -54,25 +54,6 @@ class WorkspaceController {
     } // fim create
 */
 
-    //update 
-
-    async update(request: Request, response: Response, next: NextFunction) {
-        try {
-            const { titulo } = request.body
-            const { id } = request.params
-            
-            
-            await knex('workspace')
-            .update({ titulo })
-            .where({ id })
-
-            return response.send()
-
-        } catch (error) {
-            next(error)
-        }
-    }
-   */
 //Create
 
 async create(request: Request, response: Response, next: NextFunction) { 
@@ -169,11 +150,6 @@ async show(request: Request, response: Response, next: NextFunction) {
         return response.status(400).json({ message: 'Worksapce not Found' });
     }
 
-    
-   
-    
-   
-
 }
 
 //Update
@@ -212,10 +188,6 @@ async show(request: Request, response: Response, next: NextFunction) {
 }
 
 }
-
-
-
-
 
 
 export default WorkspaceController;
