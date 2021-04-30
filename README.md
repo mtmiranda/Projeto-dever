@@ -1,28 +1,66 @@
 # Projeto-Dev~~er~~ :bookmark_tabs:
-Esse projeto é para ser uma aplicação web/mobile de **anotações**, onde a pessoa pode fazer *task lists*, *projetos* e *guardar seus 
-conteúdos*, *arquivos de estudos* e etcetera.
 
-### Tá bom, mas qual é o intuito? 
-Nada mais e nada menos do que **APRENDER** :boom:. E nada melhor do que ir colocando seus conhecimentos em prática (por a mão na massa), *né nom*? 
+## Sobre
 
-#### E o que será utilizado...
-O básiquinho para sempre está se aprimorando e aprendendo mais, nosso **html5** com uma semântica :bomb:
+Esse projeto é para ser uma aplicação web/mobile de **anotações**, onde o usuário pode fazer _task lists_, _projetos_ e _guardar seus
+conteúdos_, _arquivos de estudos_ e etcetera.
+
+## **Start**
+
+👇 Use o comando abaixo na pasta **WEB** para _instalar_ todas as depêndencias
+
+    npm install
+    or
+    yarn
+
+👇 Use o comando na pasta **WEB** abaixo para _rodar_ o projeto
+
+    npm start
+    or
+    yarn dev
+
+OBS: Para acessar a **Home** utilize as credencias de acesso na página de login:
+
+**matrícula**: admin
+**senha**: admin
+
+## Imagens do projeto
+
+<p float="left">
+  <img src="https://www.mediafire.com/view/66cv0q6rd9mht62/loginDever-desk.png/file" width="100" />
+  <img src="https://www.mediafire.com/view/rzyt898wqu4qg2z/homepageDever-desk.png/file" width="100" /> 
+  <img src="https://www.mediafire.com/view/fjlbf84pdda5ag2/notaDever-desk.png/file" width="100" />
+  <img src="  https://www.mediafire.com/view/jf729hed1t198og/homepageDever-mob.png/file" width="100" />
+
+</p>
+
+### Qual é o intuito do projeto?
+
+Nada mais e nada menos do que **APRENDER** :boom:. E nada melhor do que ir colocando seus conhecimentos em prática (por a mão na massa), _certo_?
+
+#### 🔨 E o que utilizamos...
+
+Nossa tríade essencial como HTML5, CSS, Javascript, assim como algumas bibliotecas essenciais para ajudar o dev listadas abaixo :bomb:
+
+- [x] NodeJS, React
+- [x] Styled-components
+- [x] Framer-motion
+- [x] MaterialUI
+- [x] Knex.js
+- [x] axios
+- [x] express
+
 ### AND
-será reunido o melhor do *css3/4*, nosso lindo **flex** e **grid**, mais que amigas *FRIENDS*! 
+
+para deixar o projeto com estilização moderna optamos pelos **styled-components**!
+
 #### ENTRETANTO
-###### O **objetivo** desse projeto é testar mais o lado de programação do que o de layout, por isso será uma aplicação que tem bastante funcionalidades.
-- O usuário poderá editar textos, cores.
-- Adicionar arquivos, tabelas, listas.
-- Fazer personalizações das maneiras desejadas.
-- Adicionar novos conteúdos.
+
+###### O **objetivo** desse projeto é testar mais o lado de programação do que o de layout, por isso pensamos em uma aplicação que tem bastante funcionalidades.
+
+- O usuário poderá inserir suas anotações customizadas.
+- Se organizar, nomeando um título e conteúdo para as anotações.
+- Ter um controle melhor de visualização, analizando a última modificação das anotações.
+- Arquivar e restaurar seus conteúdos.
 
 :grey_exclamation: Conforme for surgindo novas coisas, irei adicionando mais aqui!
-
-E pra fazer tudo isso será utilizado muito do nosso amigo, mas só ele mesmo, puríssimo o **JAVASCRIPT**. 
-
-**:gem: Mas, calma aí só isso? Claro que não, mas está sendo decidido ainda, por enquanto temos...**
-- [x] Node, Typescrit, React
-- [x] Mais a acrescentar..
-
-Até o momento só, mas ao decorrer do tempo vai acontecer mais pesquisas, vai ver qual vai se adequar melhor. E nem preciso dizer né?
-#### Vocês vão ficar sabendo! :squirrel: 
