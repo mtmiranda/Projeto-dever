@@ -52,7 +52,7 @@ Nossa tríade essencial como HTML5, CSS, Javascript, assim como algumas bibliote
 
 ### AND
 
-para deixar o projeto com estilização moderna optamos pelos **styled-components**!
+Para deixar o projeto com estilização moderna optamos pelos **styled-components**!
 
 #### ENTRETANTO
 
