@@ -27,10 +27,10 @@ OBS: Para acessar a **Home** utilize as credencias de acesso na página de login
 ## Imagens do projeto
 
 <p float="left">
-  <img src="https://www.mediafire.com/convkey/78ac/66cv0q6rd9mht62zg.jpg" width="100" />
-  <img src="https://www.mediafire.com/convkey/9656/rzyt898wqu4qg2zzg.jpg" width="100" />
-  <img src="https://www.mediafire.com/convkey/38c4/fjlbf84pdda5ag2zg.jpg" width="100" /> 
-  <img src="https://www.mediafire.com/convkey/e74d/jf729hed1t198ogzg.jpg" width="100" />
+  <img src="https://www.mediafire.com/convkey/78ac/66cv0q6rd9mht62zg.jpg" width="300" height="220" />
+  <img src="https://www.mediafire.com/convkey/9656/rzyt898wqu4qg2zzg.jpg" width="300" height="220" />
+  <img src="https://www.mediafire.com/convkey/38c4/fjlbf84pdda5ag2zg.jpg" width="300" height="220"/> 
+  <img src="https://www.mediafire.com/convkey/e74d/jf729hed1t198ogzg.jpg" width="300" height="220"/>
 
 </p>
 
